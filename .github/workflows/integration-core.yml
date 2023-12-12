@@ -19,7 +19,7 @@ env:
 
   project_path: ./src/Integration.Core/
   nupkg_path: ./src/Integration.Core/bin/Release/net8.0/Integration.Core.12.12.23.1.0.0.nupkg
-  nupkg_source: "github"
+  nupkg_source: 'github'
   nupkg_secret: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
