@@ -18,8 +18,8 @@ env:
   owner: onurkanbakirci
   repo: Integration
 
-  project_path: ./src/Integration.Marketplaces.Trendyol/
-  nupkg_path: ./src/Integration.Marketplaces.Trendyol/bin/Release/net8.0/Integration.Marketplaces.Trendyol.12.12.23.1.0.0.nupkg
+  project_path: ./src/Marketplaces/Integration.Marketplaces.Trendyol/
+  nupkg_path: ./src/Marketplaces/Integration.Marketplaces.Trendyol/bin/Release/net8.0/Integration.Marketplaces.Trendyol.12.12.23.1.0.0.nupkg
   nupkg_source: 'github'
   nupkg_secret: ${{ secrets.GITHUB_TOKEN }}
 
