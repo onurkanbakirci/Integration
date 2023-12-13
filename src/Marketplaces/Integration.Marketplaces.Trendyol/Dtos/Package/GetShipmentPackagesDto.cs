@@ -1,3 +1,4 @@
+using Integration.Core;
 using PackageModel = Integration.Marketplaces.Trendyol.Models.Package.Package;
 
 namespace Integration.Marketplaces.Trendyol.Dtos.Package;

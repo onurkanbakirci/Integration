@@ -1,4 +1,4 @@
-# Integrator Project 
+# Integration Project 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -13,7 +13,7 @@
 
 ## Table of contents
 
-- [Integrator Project](#integrator-project)
+- [Integration Project](#integration-project)
   - [Build Status](#build-status)
   - [Table of contents](#table-of-contents)
   - [Introduction](#introduction)
