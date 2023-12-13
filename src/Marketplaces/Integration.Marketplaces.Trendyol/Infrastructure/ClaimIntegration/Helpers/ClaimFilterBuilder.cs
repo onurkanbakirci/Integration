@@ -1,5 +1,7 @@
+using Integration.Core;
+
 namespace Integration.Marketplaces.Trendyol.Infrastructure.ClaimIntegration.Helpers;
-public class ClaimFilterBuilder
+public class ClaimFilterBuilder : IFilterBuilder
 {
     private string _filterQuery;
     public ClaimFilterBuilder()

@@ -1,7 +1,8 @@
+using Integration.Core;
 using Integration.Marketplaces.Trendyol.Infrastructure.OrderIntegration.Constants;
 
 namespace Integration.Marketplaces.Trendyol.Infrastructure.OrderIntegration.Helpers;
-public class ShipmentFilterBuilder
+public class ShipmentFilterBuilder : IFilterBuilder
 {
     private string _filterQuery;
     public ShipmentFilterBuilder()

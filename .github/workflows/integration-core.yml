@@ -18,7 +18,7 @@ env:
   repo: Integration
 
   project_path: ./src/Integration.Core/
-  nupkg_path: ./src/Integration.Core/bin/Release/Integration.Core.12.12.23.1.0.0.nupkg
+  nupkg_path: ./src/Integration.Core/bin/Release/Integration.Core.1.0.0.nupkg
   nupkg_source: 'github'
   nupkg_secret: ${{ secrets.GITHUB_TOKEN }}
 

@@ -16,13 +16,13 @@ public class TrendyolClaimIntegration : TrendyolIntegrationBase, ITrendyolClaimI
         return await InvokeRequestAsync<GetClaimDto>((client) => client.GetAsync(GetClaimsUrl() + filterQuery));
     }
 
-    public async Task<> CreateClaimAsync(AddClaimDto addClaimDto)
+    public async Task<bool> CreateClaimAsync(AddClaimDto addClaimDto)
     {
-        return await InvokeRequestAsync<>((client, requestBody) => client.PostAsync(GetCreateClaimUrl(), requestBody), addClaimDto);
+        return await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetCreateClaimUrl(), requestBody), addClaimDto);
     }
 
-    public async Task<> ApproveClaimLineItemsAsync(string claimId)
+    public async Task<bool> ApproveClaimLineItemsAsync(ApproveClaimLineItemsDto getApproveClaimLineItemsDto, string claimId)
     {
-        return await InvokeRequestAsync<>((client) => client.PostAsync(GetApproveClaimLineItemUrl(claimId), ));
+        return await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetApproveClaimLineItemUrl(claimId), requestBody), getApproveClaimLineItemsDto);
     }
 }

@@ -1,5 +1,7 @@
+using Integration.Core;
+
 namespace Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration.Helpers;
-public class ProductFilterBuilder
+public class ProductFilterBuilder : IFilterBuilder
 {
     private string _filterQuery;
     public ProductFilterBuilder()
