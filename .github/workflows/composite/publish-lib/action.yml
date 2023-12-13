@@ -31,7 +31,7 @@ runs:
 
     - name: Add github as a source
       shell: "bash"
-      run: dotnet nuget add source --username onurkanbakirci --password ${{inputs.api_key}} --name github https://nuget.pkg.github.com/onurkanbakirci/index.json
+      run: dotnet nuget add source --username onurkanbakirci --password ${{inputs.api_key}} --store-password-in-clear-text --name github https://nuget.pkg.github.com/onurkanbakirci/index.json
 
     - name: Publish nuget packages
       shell: "bash"
