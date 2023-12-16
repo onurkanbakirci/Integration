@@ -34,4 +34,4 @@ runs:
 
     - name: Publish nuget packages
       shell: "bash"
-      run: dotnet nuget push ${{ inputs.nupkg_path }} -k ${{inputs.api_key}} -s ${{inputs.package_source}}
+      run: dotnet nuget push ${{ inputs.nupkg_path }} -k ${{inputs.api_key}} -s ${{inputs.package_source}} --skip-duplicate
