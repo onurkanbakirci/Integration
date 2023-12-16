@@ -14,6 +14,9 @@ inputs:
   api_key:
     description: "Destination package source api key"
     required: true
+  package_source:
+    description: "Destination registry"
+    required: true
 
 runs:
   using: "composite"
@@ -31,7 +34,7 @@ runs:
 
     - name: Add github as a source
       shell: "bash"
-      run: dotnet nuget add source --username onurkanbakirci --password ${{inputs.api_key}} --store-password-in-clear-text --name github https://nuget.pkg.github.com/onurkanbakirci/index.json
+      run: dotnet nuget add source --username onurkanbakirci --password ${{inputs.api_key}} --store-password-in-clear-text --name github ${{package_source}}}
 
     - name: Publish nuget packages
       shell: "bash"

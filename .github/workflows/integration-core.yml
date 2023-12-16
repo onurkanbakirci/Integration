@@ -20,7 +20,10 @@ env:
   project_path: ./src/Integration.Core/
   nupkg_path: ./src/Integration.Core/bin/Release/Integration.Core.1.0.0.nupkg
   nupkg_source: 'github'
-  nupkg_secret: ${{ secrets.GITHUB_TOKEN }}
+  nupkg_github_secret: ${{ secrets.GITHUB_TOKEN }}
+  nupkg_nuget_secret: ${{ secrets.NUGET_API_KEY }}
+  github_registry_url: https://nuget.pkg.github.com/onurkanbakirci/index.json
+  nuget_registry_url: https://api.nuget.org/v3/index.json
 
 jobs:
   build-lib:
@@ -65,9 +68,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - uses: ./.github/workflows/composite/publish-lib
+      - name: Push nuget package to github registry
+        uses: ./.github/workflows/composite/publish-lib
         with:
+          package_source: ${{env.github_registry_url}}
           path: ${{ env.project_path }}
           nupkg_path: ${{env.nupkg_path}}
           source: ${{ env.nupkg_source }}
-          api_key: ${{ env.nupkg_secret }}
+          api_key: ${{ env.nupkg_github_secret }}
+
+      - name: Push nuget package to nuget registry
+        uses: ./.github/workflows/composite/publish-lib
+        with:
+          package_source: ${{env.nuget_registry_url}}
+          path: ${{ env.project_path }}
+          nupkg_path: ${{env.nupkg_path}}
+          source: ${{ env.nupkg_source }}
+          api_key: ${{ env.nupkg_nuget_secret }}
