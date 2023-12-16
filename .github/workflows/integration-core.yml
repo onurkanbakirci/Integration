@@ -26,7 +26,7 @@ env:
   nuget_registry_url: https://api.nuget.org/v3/index.json
 
 jobs:
-  build-lib:
+  build_lib:
     name: Build Lib
     runs-on: ubuntu-latest
 
@@ -47,10 +47,10 @@ jobs:
           cd ${{env.project_path}}
           dotnet build --no-restore
 
-  test-lib:
+  test_lib:
     name: Test Lib
     runs-on: ubuntu-latest
-    needs: build-lib
+    needs: build_lib
 
     steps:
       - name: Checkout repository
@@ -59,10 +59,10 @@ jobs:
       - name: Test
         run: |
 
-  publish-lib:
-    name: Publish Lib
+  publish_lib_to_github:
+    name: Publish Lib to Github
     runs-on: ubuntu-latest
-    needs: test-lib
+    needs: test_lib
     
     steps:
       - name: Checkout repository
@@ -76,6 +76,15 @@ jobs:
           nupkg_path: ${{env.nupkg_path}}
           source: ${{ env.nupkg_source }}
           api_key: ${{ env.nupkg_github_secret }}
+
+  publish_lib_to_nuget:
+    name: Publish Lib to Nuget
+    runs-on: ubuntu-latest
+    needs: test_lib
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Push nuget package to nuget registry
         uses: ./.github/workflows/composite/publish-lib
