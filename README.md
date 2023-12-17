@@ -21,6 +21,8 @@ Enhance your integration workflows by leveraging the Integration Library, which 
   - [Introduction](#introduction)
   - [How to install](#how-to-install)
   - [How to use](#how-to-use)
+    - [Trendyol](#trendyol)
+    - [Hepsiburada](#hepsiburada)
 
 
 ## Introduction
@@ -35,6 +37,8 @@ dotnet add package Integration.Marketplaces.Trendyol --version 1.0.0
 
 ## How to use
 
+### Trendyol
+
 ```c#
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration;
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration.Helpers;
@@ -45,7 +49,7 @@ var trendyolProductIntegration = new TrendyolProductIntegration("supplierId", "a
 var categories = trendyolProductIntegration.GetCategoryTreeAsync();
 
 //Get All Brands
-var brands = trendyolProductIntegration.GetBrandsUrl();
+var brands = trendyolProductIntegration.GetBrandsAsync();
 
 //Filter products
 var productFilter = new ProductFilterBuilder()
@@ -60,3 +64,5 @@ var productFilter = new ProductFilterBuilder()
 
 var products = trendyolProductIntegration.FilterProductsAsync(productFilter);
 ```
+
+### Hepsiburada

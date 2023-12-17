@@ -71,9 +71,9 @@ jobs:
       - name: Push nuget package to github registry
         uses: ./.github/workflows/composite/publish-lib
         with:
-          package_source: ${{env.github_registry_url}}
+          package_source: ${{ env.github_registry_url }}
           path: ${{ env.project_path }}
-          nupkg_path: ${{env.nupkg_path}}
+          nupkg_path: ${{ env.nupkg_path }}
           api_key: ${{ env.nupkg_github_secret }}
 
   publish_lib_to_nuget:
@@ -88,7 +88,7 @@ jobs:
       - name: Push nuget package to nuget registry
         uses: ./.github/workflows/composite/publish-lib
         with:
-          package_source: ${{env.nuget_registry_url}}
+          package_source: ${{ env.nuget_registry_url }}
           path: ${{ env.project_path }}
-          nupkg_path: ${{env.nupkg_path}}
+          nupkg_path: ${{ env.nupkg_path }}
           api_key: ${{ env.nupkg_nuget_secret }}

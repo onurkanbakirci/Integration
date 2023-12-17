@@ -10,7 +10,7 @@ public class IntegrationBase
         _httpClient = new HttpClient();
     }
 
-    public async Task<TResponse> InvokeRequestAsync<TResponse>(Func<HttpClient, Task<HttpResponseMessage>> httpRequest)
+    public async Task<TResponse> InvokeRequestAsync<TResponse>(Func<HttpClient, Task<HttpResponseMessage>> httpRequest) where TResponse : IResponseModel
     {
         var response = await httpRequest.Invoke(_httpClient);
         var responseAsString = await response.Content.ReadAsStringAsync();
@@ -32,9 +32,9 @@ public class IntegrationBase
         return isSuccess;
     }
 
-    public async Task<TResponse> InvokeRequestAsync<TResponse>(Func<HttpClient, StringContent?, Task<HttpResponseMessage>> httpRequest, IDto dto)
+    public async Task<TResponse> InvokeRequestAsync<TResponse>(Func<HttpClient, StringContent?, Task<HttpResponseMessage>> httpRequest, IRequestModel requestModel) where TResponse : IResponseModel
     {
-        var jsonData = JsonSerializer.Serialize(dto);
+        var jsonData = JsonSerializer.Serialize(requestModel);
         var requestBody = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
         var response = await httpRequest.Invoke(_httpClient, requestBody);
@@ -45,9 +45,9 @@ public class IntegrationBase
         return JsonSerializer.Deserialize<TResponse>(responseAsString)!;
     }
 
-    public async Task<bool> InvokeRequestAsync(Func<HttpClient, StringContent?, Task<HttpResponseMessage>> httpRequest, IDto dto)
+    public async Task<bool> InvokeRequestAsync(Func<HttpClient, StringContent?, Task<HttpResponseMessage>> httpRequest, IRequestModel requestModel)
     {
-        var jsonData = JsonSerializer.Serialize(dto);
+        var jsonData = JsonSerializer.Serialize(requestModel);
         var requestBody = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
         var response = await httpRequest.Invoke(_httpClient, requestBody);

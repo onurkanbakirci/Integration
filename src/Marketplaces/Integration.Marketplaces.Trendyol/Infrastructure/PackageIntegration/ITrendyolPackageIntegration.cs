@@ -1,17 +1,18 @@
-using Integration.Marketplaces.Trendyol.Dtos.Invoice;
-using Integration.Marketplaces.Trendyol.Dtos.Package;
+using Integration.Marketplaces.Trendyol.Infrastructure.PackageIntegration.Models.Request;
+using Integration.Marketplaces.Trendyol.Infrastructure.PackageIntegration.Models.Response;
+
 namespace Integration.Marketplaces.Trendyol.Infrastructure.OrderIntegration;
 
 public interface ITrendyolPackageIntegration
 {
-    Task<GetShipmentPackagesDto?> GetShipmentPackagesAsync(string filterQuery);
-    Task<bool> UpdateTrackingNumberAsync(long shipmentPackageId, UpdateTrackingNumberDto updateTrackingNumberDto);
-    Task<bool> UpdatePackageAsync(long shipmentPackageId, UpdatePackageDto updatePackageDto);
-    Task<bool> SendInvoiceLinkAsync(AddInvoiceLinkDto addInvoiceLinkDto);
-    Task<bool> DeleteInvoiceLinkAsync(DeleteInvoiceLinkDto deleteInvoiceLinkDto);
-    Task<bool> SplitMultiPackageByQuantityAsync(long shipmentPackageId, SplitMultiPackageByQuantityDto splitMultiPackageByQuantityDto);
-    Task<bool> SplitMultiShipmentPackageAsync(long shipmentPackageId, SplitMultiShipmentPackageDto splitMultiShipmentPackageDto);
-    Task<bool> SplitShipmentPackageAsync(long shipmentPackageId, SplitShipmentPackageDto splitShipmentPackageDto);
-    Task<bool> SplitShipmentPackageByQuantityAsync(long shipmentPackageId, SplitShipmentPackageByQuantityDto splitShipmentPackageByQuantityDto);
-    Task<bool> UpdateBoxInfoAsync(long shipmentPackageId, UpdateBoxInfoDto updateBoxInfoDto);
+    Task<GetShipmentPackagesResponseModel?> GetShipmentPackagesAsync(string filterQuery);
+    Task<bool> UpdateTrackingNumberAsync(long shipmentPackageId, UpdateTrackingNumberRequestModel updateTrackingNumberRequestModel);
+    Task<bool> UpdatePackageAsync(long shipmentPackageId, UpdatePackageRequestModel updatePackageRequestModel);
+    Task<bool> SendInvoiceLinkAsync(AddInvoiceLinkRequestModel addInvoiceLinkRequestModel);
+    Task<bool> DeleteInvoiceLinkAsync(DeleteInvoiceLinkRequestModel deleteInvoiceLinkRequestModel);
+    Task<bool> SplitMultiPackageByQuantityAsync(long shipmentPackageId, SplitMultiPackageByQuantityRequestModel splitMultiPackageByQuantityRequestModel);
+    Task<bool> SplitMultiShipmentPackageAsync(long shipmentPackageId, SplitMultiShipmentPackageRequestModel splitMultiShipmentPackageRequestModel);
+    Task<bool> SplitShipmentPackageAsync(long shipmentPackageId, SplitShipmentPackageRequestModel splitShipmentPackageRequestModel);
+    Task<bool> SplitShipmentPackageByQuantityAsync(long shipmentPackageId, SplitMultiPackageByQuantityRequestModel splitMultiPackageByQuantityRequestModel);
+    Task<bool> UpdateBoxInfoAsync(long shipmentPackageId, UpdateBoxInfoRequestModel updateBoxInfoRequestModel);
 }

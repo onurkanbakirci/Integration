@@ -7,7 +7,7 @@ var trendyolProductIntegration = new TrendyolProductIntegration("supplierId", "a
 var categories = trendyolProductIntegration.GetCategoryTreeAsync();
 
 //Get All Brands
-var brands = trendyolProductIntegration.GetBrandsUrl();
+var brands = trendyolProductIntegration.GetBrandsAsync();
 
 //Filter products
 var productFilter = new ProductFilterBuilder()
