@@ -20,11 +20,22 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
     {
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="filterQuery"></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<GetShipmentPackagesResponseModel?> GetShipmentPackagesAsync(string filterQuery)
     {
         return await InvokeRequestAsync<GetShipmentPackagesResponseModel?>((client) => client.GetAsync(GetShipmentPackagesUrl() + filterQuery));
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="updateTrackingNumberRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> UpdateTrackingNumberAsync(long shipmentPackageId, UpdateTrackingNumberRequestModel updateTrackingNumberRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetUpdateTrackingNumberUrl(shipmentPackageId), requestBody), updateTrackingNumberRequestModel);
@@ -32,6 +43,12 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="updatePackageRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> UpdatePackageAsync(long shipmentPackageId, UpdatePackageRequestModel updatePackageRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetUpdatePackageUrl(shipmentPackageId), requestBody), updatePackageRequestModel);
@@ -39,6 +56,11 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="addInvoiceLinkRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> SendInvoiceLinkAsync(AddInvoiceLinkRequestModel addInvoiceLinkRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetAddInvoiceLinkUrl(), requestBody), addInvoiceLinkRequestModel);
@@ -46,6 +68,11 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="deleteInvoiceLinkRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> DeleteInvoiceLinkAsync(DeleteInvoiceLinkRequestModel deleteInvoiceLinkRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetDeleteInvoiceLinkUrl(), requestBody), deleteInvoiceLinkRequestModel);
@@ -53,12 +80,25 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="splitMultiPackageByQuantityRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> SplitMultiPackageByQuantityAsync(long shipmentPackageId, SplitMultiPackageByQuantityRequestModel splitMultiPackageByQuantityRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetSplitMultiPackageByQuantityUrl(shipmentPackageId), requestBody), splitMultiPackageByQuantityRequestModel);
 
         return true;
     }
+
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="splitMultiShipmentPackageRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> SplitMultiShipmentPackageAsync(long shipmentPackageId, SplitMultiShipmentPackageRequestModel splitMultiShipmentPackageRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetSplitMultiShipmentPackageUrl(shipmentPackageId), requestBody), splitMultiShipmentPackageRequestModel);
@@ -66,6 +106,12 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="splitShipmentPackageRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> SplitShipmentPackageAsync(long shipmentPackageId, SplitShipmentPackageRequestModel splitShipmentPackageRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetSplitShipmentPackageUrl(shipmentPackageId), requestBody), splitShipmentPackageRequestModel);
@@ -73,6 +119,12 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="splitMultiPackageByQuantityRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> SplitShipmentPackageByQuantityAsync(long shipmentPackageId, SplitMultiPackageByQuantityRequestModel splitMultiPackageByQuantityRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetSplitShipmentPackageByQuantityUrl(shipmentPackageId), requestBody), splitMultiPackageByQuantityRequestModel);
@@ -80,6 +132,12 @@ public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPack
         return true;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="shipmentPackageId"><inheritdoc/></param>
+    /// <param name="updateBoxInfoRequestModel"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<bool> UpdateBoxInfoAsync(long shipmentPackageId, UpdateBoxInfoRequestModel updateBoxInfoRequestModel)
     {
         var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetUpdateBoxInfoUrl(shipmentPackageId), requestBody), updateBoxInfoRequestModel);
