@@ -1,23 +1,21 @@
-Commercial License
+MIT License
 
-Copyright © 2023 onurkanbakirci
+Copyright (c) 2023 onurkanbakirci
 
-This software is proprietary and confidential. Any unauthorized use, reproduction, or distribution is strictly prohibited. This software is provided "as is" and without warranties of any kind, whether express or implied.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-License Terms:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-1. Permission is granted to the Licensee to use this software solely for the purposes of their commercial project, subject to the following restrictions:
-
-2. The Licensee may not modify, decompile, reverse engineer, disassemble, or attempt to derive the source code of the software.
-
-3. The Licensee may not distribute, sublicense, or otherwise make the software available to any third party.
-
-4. The Licensee may not use this software for any illegal or unethical purpose.
-
-5. This license is valid for a single commercial project. For each additional project, the Licensee must obtain a separate license.
-
-6. The Licensor reserves the right to terminate this license at any time if the Licensee violates any of the terms and conditions.
-
-7. No warranty or support is provided with this license. The Licensor is not responsible for any damages or liabilities resulting from the use of this software.
-
-By using this software, the Licensee agrees to be bound by these terms and conditions. For licensing inquiries or questions, please contact [your contact information].
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
