@@ -20,7 +20,6 @@ Enhance your integration workflows by leveraging the Integration Library, which 
   - [Build Status](#build-status)
   - [Table of contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [How to install](#how-to-install)
   - [How to use](#how-to-use)
     - [Trendyol](#trendyol)
     - [Hepsiburada](#hepsiburada)
@@ -30,15 +29,14 @@ Enhance your integration workflows by leveraging the Integration Library, which 
 
 Enhance your integration workflows by leveraging the Integration Library, which encompasses a wide array of industrial API integrations. This library is designed to streamline and facilitate the integration process, providing seamless connectivity to various APIs commonly used in industrial settings. Whether you're working with manufacturing, automation, or any other industry, the Integration Library is a valuable resource to foster efficient and effective integration of diverse systems and services.
 
-## How to install
-
-```
-dotnet add package Integration.Marketplaces.Trendyol --version 1.0.0
-```
 
 ## How to use
 
 ### Trendyol
+
+```
+dotnet add package Integration.Marketplaces.Trendyol --version 1.0.0
+```
 
 ```c#
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration;
@@ -67,3 +65,7 @@ var products = trendyolProductIntegration.FilterProductsAsync(productFilter);
 ```
 
 ### Hepsiburada
+
+```
+dotnet add package Integration.Marketplaces.Hepsiburada --version 1.0.0
+```
