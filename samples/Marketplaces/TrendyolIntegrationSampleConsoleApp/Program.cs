@@ -1,7 +1,12 @@
 ﻿using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration;
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration.Helpers;
 
-var trendyolProductIntegration = new TrendyolProductIntegration("supplierId", "apiKey", "apiSecret", false, "entegratorFirm");
+var trendyolProductIntegration = new TrendyolProductIntegration(
+        supplierId: "supplierId",
+        apiKey: "apiKey",
+        apiSecret: "apiSecret",
+        isInProduction: false,
+        entegratorFirm: "entegratorFirm");
 
 //Get All Categories
 var categories = trendyolProductIntegration.GetCategoryTreeAsync();
