@@ -1,4 +1,4 @@
-using Integration.Core;
+using Integration.Hub;
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration.Constants;
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration.Models.Request;
 using Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration.Models.Response;

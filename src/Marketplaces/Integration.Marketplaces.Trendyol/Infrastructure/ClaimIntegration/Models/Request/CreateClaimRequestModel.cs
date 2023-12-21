@@ -1,4 +1,4 @@
-using Integration.Core;
+using Integration.Hub;
 using Integration.Marketplaces.Trendyol.Infrastructure.ClaimIntegration.Constants;
 namespace Integration.Marketplaces.Trendyol.Infrastructure.ClaimIntegration.Models.Request;
 public class CreateClaimRequestModel : IRequestModel

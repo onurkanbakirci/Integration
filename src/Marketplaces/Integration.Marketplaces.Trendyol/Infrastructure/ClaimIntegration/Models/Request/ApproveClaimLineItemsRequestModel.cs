@@ -1,4 +1,4 @@
-using Integration.Core;
+using Integration.Hub;
 namespace Integration.Marketplaces.Trendyol.Infrastructure.ClaimIntegration.Models.Request;
 public class ApproveClaimLineItemsRequestModel : IRequestModel
 {

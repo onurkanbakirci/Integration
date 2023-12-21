@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D1AC917-32E3-4579-9A06-B6190C1B9F31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration.Core", "src\Integration.Core\Integration.Core.csproj", "{2E841AED-7444-4875-8D11-D756A01105FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration.Hub", "src\Integration.Hub\Integration.Hub.csproj", "{2E841AED-7444-4875-8D11-D756A01105FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplaces", "Marketplaces", "{E2F4960B-14E1-40D3-9A7B-8528FA989D0F}"
 EndProject

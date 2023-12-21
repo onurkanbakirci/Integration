@@ -1,4 +1,4 @@
-using Integration.Core;
+using Integration.Hub;
 using Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration.Models.Response;
 using Integration.Marketplaces.Trendyol.Infrastructure;
 

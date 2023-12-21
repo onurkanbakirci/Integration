@@ -1,4 +1,4 @@
-namespace Integration.Core;
+namespace Integration.Hub;
 public class PaginationModel : IResponseModel
 {
     public int TotalElements { get; set; }

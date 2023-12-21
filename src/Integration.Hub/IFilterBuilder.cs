@@ -1,5 +1,4 @@
-namespace Integration.Core;
+namespace Integration.Hub;
 public interface IFilterBuilder
 {
-
 }

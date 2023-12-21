@@ -1,7 +1,8 @@
 using System.Text;
 using System.Text.Json;
 
-namespace Integration.Core;
+namespace Integration.Hub;
+
 public class IntegrationBase
 {
     protected static readonly HttpClient _httpClient;

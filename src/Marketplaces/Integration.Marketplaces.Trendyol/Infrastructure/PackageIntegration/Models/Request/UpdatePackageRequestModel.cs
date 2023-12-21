@@ -1,4 +1,4 @@
-using Integration.Core;
+using Integration.Hub;
 using Integration.Marketplaces.Trendyol.Infrastructure.OrderIntegration.Constants;
 namespace Integration.Marketplaces.Trendyol.Infrastructure.PackageIntegration.Models.Request;
 public class UpdatePackageRequestModel : IRequestModel
