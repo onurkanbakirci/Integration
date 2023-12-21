@@ -19,6 +19,7 @@ public interface ITrendyolProductIntegration
     /// firmasından farklı olmamalıdır. Bu durum ürünlerinizi 
     /// yayına çıkmasını engelleyecektir.
     /// </summary>
+    /// <returns><see cref="GetProviderResponseModel"/></returns>
     public List<GetProviderResponseModel> GetProviders();
 
     /// <summary>
@@ -28,7 +29,7 @@ public interface ITrendyolProductIntegration
     /// Marka araması yaparken servise page parametresini kullanarak query 
     /// oluşturmanız gerekmektedir.
     /// </summary>
-    /// <returns></returns>
+    /// <returns><see cref="GetBrandsResponseModel"/></returns>
     public Task<GetBrandsResponseModel?> GetBrandsAsync();
 
     /// <summary>
@@ -40,7 +41,7 @@ public interface ITrendyolProductIntegration
     /// Yeni kategoriler eklenebileceği sebebiyle güncel kategori listesini 
     /// haftalık olarak almanızı öneririz.
     /// </summary>
-    /// <returns></returns>
+    /// <returns><see cref="GetCategoryTreeResponseModel"/></returns>
     public Task<GetCategoryTreeResponseModel?> GetCategoryTreeAsync();
 
     /// <summary>
@@ -53,7 +54,7 @@ public interface ITrendyolProductIntegration
     /// özellik listesini haftalık olarak almanızı öneririz.
     /// </summary>
     /// <param name="categoryId">Category id</param>
-    /// <returns></returns>
+    /// <returns><see cref="GetCategoryAttributesResponseModel"/></returns>
     public Task<GetCategoryAttributesResponseModel?> GetCategoryAttributes(int categoryId);
 
     /// <summary>
@@ -62,7 +63,7 @@ public interface ITrendyolProductIntegration
     /// kullanılarak alınacaktır.
     /// </summary>
     /// <param name="products"></param>
-    /// <returns>bool</returns>
+    /// <returns><see cref="bool"/></returns>
     public Task<bool> CreateProductsV2Async(BulkModel<CreateProductRequestModel> products);
 
     /// <summary>
@@ -80,7 +81,7 @@ public interface ITrendyolProductIntegration
     /// Onaylı ürünlerde productMainId değeri güncellenmemektedir.
     /// </summary>
     /// <param name="products"></param>
-    /// <returns></returns>
+    /// <returns><see cref="bool"/></returns>
     public Task<bool> UpdateProductAsync(BulkModel<UpdateProductRequestModel> products);
 
     /// <summary>
@@ -96,7 +97,7 @@ public interface ITrendyolProductIntegration
     /// Ürünleriniz için maksimum 20 Bin adet stok ekleyebilirsiniz.
     /// </summary>
     /// <param name="products"></param>
-    /// <returns></returns>
+    /// <returns><see cref="bool"/></returns>
     public Task<bool> UpdatePriceAndInventoryAsync(BulkModel<UpdateStockAndPriceRequestModel> products);
 
     /// <summary>
@@ -106,7 +107,7 @@ public interface ITrendyolProductIntegration
     /// Trendyol tarafından satışa durdurulmamış onaylı ürünlerinizi silebilirsiniz.
     /// </summary>
     /// <param name="products"></param>
-    /// <returns></returns>
+    /// <returns><see cref="bool"/></returns>
     public Task<bool> DeleteProductsAsync(BulkModel<DeleteProductRequestModel> products);
 
     /// <summary>
@@ -123,13 +124,13 @@ public interface ITrendyolProductIntegration
     /// status alanlarını kontrol etmeniz gerekmektedir. Batch status alanı tarafınıza dönmeyecektir.
     /// </summary>
     /// <param name="batchRequestId"></param>
-    /// <returns></returns>
+    /// <returns><see cref="bool"/></returns>
     public Task<GetBatchRequestResultResponseModel> GetBatchRequestResultAsync(string batchRequestId);
     
     /// <summary>
     /// Bu servis ile Trendyol mağazanızdaki ürünlerinizi listeleyebilirsiniz.
     /// </summary>
     /// <param name="filterQuery"></param>
-    /// <returns></returns>
+    /// <returns><see cref="bool"/></returns>
     public Task<FilterProductsResponseModel?> FilterProductsAsync(string filterQuery);
 }

@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Marketplaces\Integration.Marketplaces.Trendyol\Integration.Marketplaces.Trendyol.csproj" />
+    <ProjectReference
+      Include="..\..\..\src\Marketplaces\Integration.Marketplaces.Hepsiburada\Integration.Marketplaces.Hepsiburada.csproj" />
   </ItemGroup>
+
 
 </Project>

@@ -50,10 +50,10 @@ var trendyolProductIntegration = new TrendyolProductIntegration(
         entegratorFirm: "entegratorFirm");
 
 //Get All Categories
-var categories = trendyolProductIntegration.GetCategoryTreeAsync();
+var categories = await trendyolProductIntegration.GetCategoryTreeAsync();
 
 //Get All Brands
-var brands = trendyolProductIntegration.GetBrandsAsync();
+var brands = await trendyolProductIntegration.GetBrandsAsync();
 
 //Filter products
 var productFilter = new ProductFilterBuilder()
@@ -66,11 +66,27 @@ var productFilter = new ProductFilterBuilder()
     .AddSupplierId(0)
     .Build();
 
-var products = trendyolProductIntegration.FilterProductsAsync(productFilter);
+var products = await trendyolProductIntegration.FilterProductsAsync(productFilter);
 ```
 
 ### Hepsiburada
 
 ```
 dotnet add package Integration.Marketplaces.Hepsiburada --version 1.0.0
+```
+
+```c#
+var hepsiburadaProductIntegration = new HepsiburadaProductIntegration(
+        username: "username",
+        password: "password",
+        isInProduction: false);
+
+//Get All Categories
+var categories = await hepsiburadaProductIntegration.GetCategoriesAsync();
+
+//Get Category Attributes
+var categoryAttributes = await hepsiburadaProductIntegration.GetCategoryAttributesAsync(categoryId: 80844002);
+
+// Get Category Attribute Values
+var categoryAttributeValues = await hepsiburadaProductIntegration.GetCategoryAttributeValuesAsync(categoryId: 80844002, attributeId: "gram");
 ```

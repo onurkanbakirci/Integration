@@ -9,10 +9,10 @@ var trendyolProductIntegration = new TrendyolProductIntegration(
         entegratorFirm: "entegratorFirm");
 
 //Get All Categories
-var categories = trendyolProductIntegration.GetCategoryTreeAsync();
+var categories = await trendyolProductIntegration.GetCategoryTreeAsync();
 
 //Get All Brands
-var brands = trendyolProductIntegration.GetBrandsAsync();
+var brands = await trendyolProductIntegration.GetBrandsAsync();
 
 //Filter products
 var productFilter = new ProductFilterBuilder()
@@ -25,4 +25,4 @@ var productFilter = new ProductFilterBuilder()
     .AddSupplierId(0)
     .Build();
 
-var products = trendyolProductIntegration.FilterProductsAsync(productFilter);
+var products = await trendyolProductIntegration.FilterProductsAsync(productFilter);

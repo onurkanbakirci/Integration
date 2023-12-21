@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplaces", "Marketplace
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendyolIntegrationSampleConsoleApp", "samples\Marketplaces\TrendyolIntegrationSampleConsoleApp\TrendyolIntegrationSampleConsoleApp.csproj", "{E2A95CF6-3420-43FB-836F-FB8FCB0ABF5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiburadaIntegrationSampleConsoleApp", "samples\Marketplaces\HepsiburadaIntegrationSampleConsoleApp\HepsiburadaIntegrationSampleConsoleApp.csproj", "{1EA1F383-84B1-47DD-BB85-E0CE2F0AC207}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{E2A95CF6-3420-43FB-836F-FB8FCB0ABF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2A95CF6-3420-43FB-836F-FB8FCB0ABF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2A95CF6-3420-43FB-836F-FB8FCB0ABF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA1F383-84B1-47DD-BB85-E0CE2F0AC207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA1F383-84B1-47DD-BB85-E0CE2F0AC207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA1F383-84B1-47DD-BB85-E0CE2F0AC207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA1F383-84B1-47DD-BB85-E0CE2F0AC207}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2E841AED-7444-4875-8D11-D756A01105FD} = {8D1AC917-32E3-4579-9A06-B6190C1B9F31}
@@ -52,5 +58,6 @@ Global
 		{D80122E8-72B1-4B86-A277-4FD3BAC21FB4} = {E2F4960B-14E1-40D3-9A7B-8528FA989D0F}
 		{6A70107C-D16B-4588-817E-11731CAEDB71} = {51C29F15-6693-428D-9705-1986F8C71428}
 		{E2A95CF6-3420-43FB-836F-FB8FCB0ABF5A} = {6A70107C-D16B-4588-817E-11731CAEDB71}
+		{1EA1F383-84B1-47DD-BB85-E0CE2F0AC207} = {6A70107C-D16B-4588-817E-11731CAEDB71}
 	EndGlobalSection
 EndGlobal
