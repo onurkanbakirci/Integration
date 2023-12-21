@@ -18,7 +18,7 @@ env:
   repo: Integration
 
   project_path: ./src/Integration.Core/
-  nupkg_path: ./src/Integration.Core/bin/Release/Integration.Core.1.0.0.nupkg
+  nupkg_path: ./src/Integration.Core/bin/Release/Integration.Hub.1.0.0.nupkg
   nupkg_github_secret: ${{ secrets.GITHUB_TOKEN }}
   nupkg_nuget_secret: ${{ secrets.NUGET_API_KEY }}
   github_registry_url: https://nuget.pkg.github.com/onurkanbakirci/index.json

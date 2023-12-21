@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>Integration.Core</PackageId>
+    <PackageId>Integration.Hub</PackageId>
     <Version>1.0.0</Version>
     <Authors>onurkanbakirci</Authors>
     <Company>onurkanbakirci</Company>
