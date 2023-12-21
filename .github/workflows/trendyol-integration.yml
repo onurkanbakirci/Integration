@@ -19,7 +19,7 @@ env:
   repo: Integration
 
   project_path: ./src/Marketplaces/Integration.Marketplaces.Trendyol/
-  nupkg_path: ./src/Marketplaces/Integration.Marketplaces.Trendyol/bin/Release/Integration.Marketplaces.Trendyol.1.0.0.nupkg
+  nupkg_path: ./src/Marketplaces/Integration.Marketplaces.Trendyol/bin/Release/Integration.Marketplaces.Trendyol.1.0.1.nupkg
   nupkg_github_secret: ${{ secrets.GITHUB_TOKEN }}
   nupkg_nuget_secret: ${{ secrets.NUGET_API_KEY }}
   github_registry_url: https://nuget.pkg.github.com/onurkanbakirci/index.json

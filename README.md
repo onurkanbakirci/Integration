@@ -16,9 +16,9 @@ Enhance your integration workflows by leveraging the Integration Library, which 
 
 &nbsp; | `status` | `version`
 --- | --- | --- 
-**Integration.Hub** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/integration-hub.yml/badge.svg) |  1.0.0
-**Integration.Marketplaces.Trendyol** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/trendyol-integration.yml/badge.svg) |  1.0.0
-**Integration.Marketplaces.Hepsiburada** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/hepsiburada-integration.yml/badge.svg) |  1.0.0
+**Integration.Hub** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/integration-hub.yml/badge.svg) |  1.0.1
+**Integration.Marketplaces.Trendyol** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/trendyol-integration.yml/badge.svg) |  1.0.1
+**Integration.Marketplaces.Hepsiburada** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/hepsiburada-integration.yml/badge.svg) |  1.0.1
 
 ## Table of contents
 
@@ -41,7 +41,7 @@ Enhance your integration workflows by leveraging the Integration Library, which 
 ### Trendyol
 
 ```
-dotnet add package Integration.Marketplaces.Trendyol --version 1.0.0
+dotnet add package Integration.Marketplaces.Trendyol --version 1.0.1
 ```
 
 ```c#
@@ -78,7 +78,7 @@ var products = await trendyolProductIntegration.FilterProductsAsync(productFilte
 ### Hepsiburada
 
 ```
-dotnet add package Integration.Marketplaces.Hepsiburada --version 1.0.0
+dotnet add package Integration.Marketplaces.Hepsiburada --version 1.0.1
 ```
 
 ```c#
