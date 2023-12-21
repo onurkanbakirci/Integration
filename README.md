@@ -5,7 +5,7 @@
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
   <img src="https://yt3.googleusercontent.com/tOTacHyEgTXLN6JWT8ftiZ-xtHnX0R_XFRRS-AB_A9FXVrTC5-QhAWNF0pfWi2yi_APG3Q4N1Q=s900-c-k-c0x00ffffff-no-rj" width="48">
-  <img src="https://images.hepsiburada.net/cac/content/www/erised/globalAssets/images/hepsiburada-logo-1024.png" width="48">
+  <img src="https://media.licdn.com/dms/image/C4D0BAQE1iTu5X4_WDw/company-logo_200_200/0/1679918244582?e=1710979200&v=beta&t=CccfF3oAMI5QYf_LWKzcvfAocW7x_1aIzXGpgFbueZo" width="48">
 </p>
 
 **Synchronize Your Code Universe**
