@@ -82,6 +82,8 @@ dotnet add package Integration.Marketplaces.Hepsiburada --version 1.0.0
 ```
 
 ```c#
+using Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration;
+
 var hepsiburadaProductIntegration = new HepsiburadaProductIntegration(
         username: "username",
         password: "password",

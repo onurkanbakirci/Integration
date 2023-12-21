@@ -1,4 +1,6 @@
-﻿var hepsiburadaProductIntegration = new HepsiburadaProductIntegration(
+﻿using Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration;
+
+var hepsiburadaProductIntegration = new HepsiburadaProductIntegration(
         username: "username",
         password: "password",
         isInProduction: false);

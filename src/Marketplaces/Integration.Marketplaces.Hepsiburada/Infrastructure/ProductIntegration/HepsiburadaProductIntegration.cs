@@ -1,7 +1,8 @@
 using Integration.Core;
-using Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration;
 using Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration.Models.Response;
 using Integration.Marketplaces.Trendyol.Infrastructure;
+
+namespace Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration;
 
 public class HepsiburadaProductIntegration : HepsiburadaIntegrationBase, IHepsiburadaProductIntegration, IMarketplaceIntegration
 {
