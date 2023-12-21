@@ -1,4 +1,4 @@
-name: Integration.Core
+name: Integration.Hub
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
       - main
 
     paths:
-      - src/Integration.Core/**
-      - .github/workflows/integration-core.yml
+      - src/Integration.Hub/**
+      - .github/workflows/integration-hub.yml
       - .github/workflows/composite/**
 
 env:
@@ -17,8 +17,8 @@ env:
   owner: onurkanbakirci
   repo: Integration
 
-  project_path: ./src/Integration.Core/
-  nupkg_path: ./src/Integration.Core/bin/Release/Integration.Hub.1.0.0.nupkg
+  project_path: ./src/Integration.Hub/
+  nupkg_path: ./src/Integration.Hub/bin/Release/Integration.Hub.1.0.0.nupkg
   nupkg_github_secret: ${{ secrets.GITHUB_TOKEN }}
   nupkg_nuget_secret: ${{ secrets.NUGET_API_KEY }}
   github_registry_url: https://nuget.pkg.github.com/onurkanbakirci/index.json
