@@ -16,7 +16,7 @@ Enhance your integration workflows by leveraging the Integration Library, which 
 
 &nbsp; | `status` | `version`
 --- | --- | --- 
-**Integration.Core** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/integration-core.yml/badge.svg) |  1.0.0
+**Integration.Hub** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/integration-hub.yml/badge.svg) |  1.0.0
 **Integration.Marketplaces.Trendyol** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/trendyol-integration.yml/badge.svg) |  1.0.0
 **Integration.Marketplaces.Hepsiburada** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/hepsiburada-integration.yml/badge.svg) |  1.0.0
 

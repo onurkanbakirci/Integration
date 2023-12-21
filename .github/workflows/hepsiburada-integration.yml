@@ -8,7 +8,7 @@ on:
       - main
 
     paths:
-      - src/Integration.Core/**
+      - src/Integration.Hub/**
       - src/Marketplaces/Integration.Marketplaces.Hepsiburada/**
       - .github/workflows/hepsiburada-integration.yml
       - .github/workflows/composite/**
