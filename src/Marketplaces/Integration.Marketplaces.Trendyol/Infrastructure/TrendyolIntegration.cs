@@ -1,3 +1,5 @@
+using System.Text;
+using System.Text.Json;
 using Integration.Hub;
 
 namespace Integration.Marketplaces.Trendyol.Infrastructure;
@@ -18,6 +20,18 @@ public class TrendyolIntegrationBase : IntegrationBase
         _apiSecret = apiSecret ?? throw new ArgumentNullException(nameof(apiSecret));
         _isInProduction = isInProduction;
         _entegratorFirm = entegratorFirm;
+
+        IntializeDefaultHeaders(new Dictionary<string, string>
+        {
+            { "Accept", "application/json" },
+            { "User-Agent", $"{_supplierId} - {_entegratorFirm}" },
+            { "Authorization", $"Basic {Convert.ToBase64String(Encoding.ASCII.GetBytes($"{_apiKey}:{_apiSecret}"))}"}
+        });
+
+        SetSerializerOptions(new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        });
     }
 
     public string GetBaseUrl() => _isInProduction ? ProdBaseUrl : StageBaseUrl;

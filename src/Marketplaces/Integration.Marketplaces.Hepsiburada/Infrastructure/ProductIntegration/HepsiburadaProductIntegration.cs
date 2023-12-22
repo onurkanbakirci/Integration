@@ -6,9 +6,9 @@ namespace Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration
 
 public class HepsiburadaProductIntegration : HepsiburadaIntegrationBase, IHepsiburadaProductIntegration, IMarketplaceIntegration
 {
-    private string GetCategoriesUrl() => $"{GetBaseUrl}product/api/categories/get-all-categories";
-    private string GetCategoryAttributesUrl(int categoryId) => $"{GetBaseUrl}product/api/categories/{categoryId}/attributes";
-    private string GetCategoryAttributeValueUrl(int categoryId, string attributeId) => $"{GetBaseUrl}product/api/categories/{categoryId}/attribute/{attributeId}/v";
+    private string GetCategoriesUrl() => $"{GetBaseUrl()}product/api/categories/get-all-categories";
+    private string GetCategoryAttributesUrl(int categoryId) => $"{GetBaseUrl()}product/api/categories/{categoryId}/attributes";
+    private string GetCategoryAttributeValueUrl(int categoryId, string attributeId) => $"{GetBaseUrl()}product/api/categories/{categoryId}/attribute/{attributeId}/v";
 
     public HepsiburadaProductIntegration(string username, string password, bool isInProduction = true) : base(username, password, isInProduction)
     {

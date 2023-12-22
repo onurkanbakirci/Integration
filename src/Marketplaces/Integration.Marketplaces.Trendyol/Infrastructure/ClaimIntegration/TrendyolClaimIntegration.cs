@@ -6,9 +6,9 @@ using Integration.Marketplaces.Trendyol.Infrastructure.ClaimIntegration.Models.R
 
 public class TrendyolClaimIntegration : TrendyolIntegrationBase, ITrendyolClaimIntegration, IMarketplaceIntegration
 {
-    private string GetClaimsUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/claims";
-    private string GetCreateClaimUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/claims/create";
-    private string GetApproveClaimLineItemUrl(string claimId) => $"{GetBaseUrl}claims/{claimId}/items/approve";
+    private string GetClaimsUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/claims";
+    private string GetCreateClaimUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/claims/create";
+    private string GetApproveClaimLineItemUrl(string claimId) => $"{GetBaseUrl()}claims/{claimId}/items/approve";
     public TrendyolClaimIntegration(string supplierId, string apiKey, string apiSecret, bool isInProduction, string entegratorFirm) : base(supplierId, apiKey, apiSecret, isInProduction, entegratorFirm)
     {
     }

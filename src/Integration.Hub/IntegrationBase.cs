@@ -6,9 +6,22 @@ namespace Integration.Hub;
 public class IntegrationBase
 {
     protected static readonly HttpClient _httpClient;
+    protected static JsonSerializerOptions _options = default!;
     static IntegrationBase()
     {
         _httpClient = new HttpClient();
+    }
+
+    protected void IntializeDefaultHeaders(Dictionary<string, string> headers)
+    {
+        // Add default headers to the request
+        foreach (var header in headers)
+            _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
+    }
+
+    protected void SetSerializerOptions(JsonSerializerOptions options)
+    {
+        _options = options;
     }
 
     public async Task<TResponse> InvokeRequestAsync<TResponse>(Func<HttpClient, Task<HttpResponseMessage>> httpRequest) where TResponse : IResponseModel
@@ -19,7 +32,7 @@ public class IntegrationBase
         if (!isSuccess)
             throw new Exception(responseAsString);
 
-        return JsonSerializer.Deserialize<TResponse>(responseAsString)!;
+        return JsonSerializer.Deserialize<TResponse>(responseAsString, _options)!;
     }
 
     public async Task<bool> InvokeRequestAsync(Func<HttpClient, Task<HttpResponseMessage>> httpRequest)
@@ -43,7 +56,7 @@ public class IntegrationBase
         var isSuccess = response.IsSuccessStatusCode;
         if (!isSuccess)
             throw new Exception(responseAsString);
-        return JsonSerializer.Deserialize<TResponse>(responseAsString)!;
+        return JsonSerializer.Deserialize<TResponse>(responseAsString, _options)!;
     }
 
     public async Task<bool> InvokeRequestAsync(Func<HttpClient, StringContent?, Task<HttpResponseMessage>> httpRequest, IRequestModel requestModel)

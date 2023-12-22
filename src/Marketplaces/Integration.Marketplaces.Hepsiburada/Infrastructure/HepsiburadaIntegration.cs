@@ -1,3 +1,5 @@
+using System.Text;
+using System.Text.Json;
 using Integration.Hub;
 
 namespace Integration.Marketplaces.Trendyol.Infrastructure;
@@ -14,6 +16,17 @@ public class HepsiburadaIntegrationBase : IntegrationBase
         _username = username ?? throw new ArgumentNullException(nameof(username));
         _password = password ?? throw new ArgumentNullException(nameof(password));
         _isInProduction = isInProduction;
+
+        IntializeDefaultHeaders(new Dictionary<string, string>
+        {
+            { "Accept", "application/json" },
+            { "Authorization", $"Basic {Convert.ToBase64String(Encoding.ASCII.GetBytes($"{_username}:{_password}"))}"}
+        });
+
+        SetSerializerOptions(new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        });
     }
 
     public string GetBaseUrl() => _isInProduction ? ProdBaseUrl : StageBaseUrl;

@@ -7,16 +7,16 @@ using Integration.Marketplaces.Trendyol.Models.Provider;
 namespace Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration;
 public class TrendyolProductIntegration : TrendyolIntegrationBase, ITrendyolProductIntegration, IMarketplaceIntegration
 {
-    private string GetCreateProducsUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/v2/products";
-    private string GetSupplierAddressUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/addresses";
-    private string GetBrandsUrl() => $"{GetBaseUrl}brands";
-    private string GetCategoryTreeUrl() => $"{GetBaseUrl}product-categories";
-    private string GetCategoryAttributesUrl(int categoryId) => $"{GetBaseUrl}product-categories/{categoryId}/attributes";
-    private string GetUpdateProductUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/v2/products";
-    private string GetUpdatePriceAndStockUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/products/price-and-inventory";
-    private string GetDeleteProductUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/v2/products";
-    private string GetBatchRequestResultUrl(string batchRequestId) => $"{GetBaseUrl}suppliers/{_supplierId}/products/batch-requests/{batchRequestId}";
-    private string GetFilterProductsUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/products";
+    private string GetCreateProducsUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/v2/products";
+    private string GetSupplierAddressUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/addresses";
+    private string GetBrandsUrl() => $"{GetBaseUrl()}brands";
+    private string GetCategoryTreeUrl() => $"{GetBaseUrl()}product-categories";
+    private string GetCategoryAttributesUrl(int categoryId) => $"{GetBaseUrl()}product-categories/{categoryId}/attributes";
+    private string GetUpdateProductUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/v2/products";
+    private string GetUpdatePriceAndStockUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/products/price-and-inventory";
+    private string GetDeleteProductUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/v2/products";
+    private string GetBatchRequestResultUrl(string batchRequestId) => $"{GetBaseUrl()}suppliers/{_supplierId}/products/batch-requests/{batchRequestId}";
+    private string GetFilterProductsUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/products";
     public TrendyolProductIntegration(string supplierId, string apiKey, string apiSecret, bool isInProduction, string entegratorFirm) : base(supplierId, apiKey, apiSecret, isInProduction, entegratorFirm)
     {
     }

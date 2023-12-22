@@ -6,16 +6,16 @@ using Integration.Marketplaces.Trendyol.Infrastructure.PackageIntegration.Models
 namespace Integration.Marketplaces.Trendyol.Infrastructure.ProductIntegration;
 public class TrendyolPackageIntegration : TrendyolIntegrationBase, ITrendyolPackageIntegration, IMarketplaceIntegration
 {
-    private string GetShipmentPackagesUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/orders";
-    private string GetUpdateTrackingNumberUrl(long shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}/{shipmentPackageId}/update-tracking-number";
-    private string GetUpdatePackageUrl(long shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}//shipment-packages/{shipmentPackageId}";
-    private string GetAddInvoiceLinkUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/supplier-invoice-links";
-    private string GetDeleteInvoiceLinkUrl() => $"{GetBaseUrl}suppliers/{_supplierId}/supplier-invoice-links/delete";
-    private string GetSplitMultiPackageByQuantityUrl(long _shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/split-packages";
-    private string GetSplitMultiShipmentPackageUrl(long _shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/split";
-    private string GetSplitShipmentPackageUrl(long _shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/multi-split";
-    private string GetSplitShipmentPackageByQuantityUrl(long _shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/quantity-split";
-    private string GetUpdateBoxInfoUrl(long _shipmentPackageId) => $"{GetBaseUrl}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/box-info";
+    private string GetShipmentPackagesUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/orders";
+    private string GetUpdateTrackingNumberUrl(long shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}/{shipmentPackageId}/update-tracking-number";
+    private string GetUpdatePackageUrl(long shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}//shipment-packages/{shipmentPackageId}";
+    private string GetAddInvoiceLinkUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/supplier-invoice-links";
+    private string GetDeleteInvoiceLinkUrl() => $"{GetBaseUrl()}suppliers/{_supplierId}/supplier-invoice-links/delete";
+    private string GetSplitMultiPackageByQuantityUrl(long _shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/split-packages";
+    private string GetSplitMultiShipmentPackageUrl(long _shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/split";
+    private string GetSplitShipmentPackageUrl(long _shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/multi-split";
+    private string GetSplitShipmentPackageByQuantityUrl(long _shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/quantity-split";
+    private string GetUpdateBoxInfoUrl(long _shipmentPackageId) => $"{GetBaseUrl()}suppliers/{_supplierId}/shipment-packages/{_shipmentPackageId}/box-info";
     public TrendyolPackageIntegration(string supplierId, string apiKey, string apiSecret, bool isInProduction, string entegratorFirm) : base(supplierId, apiKey, apiSecret, isInProduction, entegratorFirm)
     {
     }
