@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Integration.PaymentGateways.Paynet</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>onurkanbakirci</Authors>
+    <Company>onurkanbakirci</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integration.Hub\Integration.Hub.csproj" />
+  </ItemGroup>
+  
+</Project>

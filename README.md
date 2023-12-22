@@ -6,6 +6,7 @@
   </a>
   <img src="https://yt3.googleusercontent.com/tOTacHyEgTXLN6JWT8ftiZ-xtHnX0R_XFRRS-AB_A9FXVrTC5-QhAWNF0pfWi2yi_APG3Q4N1Q=s900-c-k-c0x00ffffff-no-rj" width="48">
   <img src="https://media.licdn.com/dms/image/C4D0BAQE1iTu5X4_WDw/company-logo_200_200/0/1679918244582?e=1710979200&v=beta&t=CccfF3oAMI5QYf_LWKzcvfAocW7x_1aIzXGpgFbueZo" width="48">
+  <img src="https://www.paynet.com.tr/themes/custom/paynet/images/og.jpg" width="90">
 </p>
 
 **Synchronize Your Code Universe**
@@ -19,6 +20,7 @@ Enhance your integration workflows by leveraging the Integration Library, which 
 **Integration.Hub** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/integration-hub.yml/badge.svg) |  1.0.1
 **Integration.Marketplaces.Trendyol** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/trendyol-integration.yml/badge.svg) |  1.0.1
 **Integration.Marketplaces.Hepsiburada** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/hepsiburada-integration.yml/badge.svg) |  1.0.1
+**Integration.PaymentGateways.Paynet** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/paynet-integration.yml/badge.svg) |  1.0.0
 
 ## Table of contents
 
@@ -29,6 +31,7 @@ Enhance your integration workflows by leveraging the Integration Library, which 
   - [How to use](#how-to-use)
     - [Trendyol](#trendyol)
     - [Hepsiburada](#hepsiburada)
+    - [Paynet](#paynet)
 
 
 ## Introduction
@@ -97,4 +100,21 @@ var categoryAttributes = await hepsiburadaProductIntegration.GetCategoryAttribut
 
 // Get Category Attribute Values
 var categoryAttributeValues = await hepsiburadaProductIntegration.GetCategoryAttributeValuesAsync(categoryId: 80844002, attributeId: "gram");
+```
+
+### Paynet
+
+```
+dotnet add package Integration.PaymentGateways.Paynet --version 1.0.0
+```
+
+```c#
+using Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration.Models.Request;
+
+var paynetPaymentIntegration = new PaynetPaymentIntegration(
+    secretKey: "secretKey",
+    isInProduction: false);
+
+// Get installments
+var installments = await paynetPaymentIntegration.CheckInstallmentAsync(new CheckInstallmentRequestModel(bin: "bin", amount: 100));
 ```
