@@ -12,9 +12,15 @@ public class CheckInstallmentRequestModel : IRequestModel
     public bool? AddcomissionToAmount { get; set; }
     public bool? MergeOption { get; set; }
 
-    public CheckInstallmentRequestModel(string? bin = null, decimal? amount = null)
+    public CheckInstallmentRequestModel(int? posType = null, string? ratioCode = null, string? bin = null, decimal? amount = null, string? agentId = null, string? cardType = null, bool? addcomissionToAmount = null, bool? mergeOption = null)
     {
+        PosType = posType;
+        RatioCode = ratioCode;
         Bin = bin;
-        Amount = amount is not null ? amount * 100 : null;
+        Amount = amount;
+        AgentId = agentId;
+        CardType = cardType;
+        AddcomissionToAmount = addcomissionToAmount;
+        MergeOption = mergeOption;
     }
 }

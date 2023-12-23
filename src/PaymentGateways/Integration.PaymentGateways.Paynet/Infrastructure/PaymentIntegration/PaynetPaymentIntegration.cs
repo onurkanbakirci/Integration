@@ -15,31 +15,62 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     public PaynetPaymentIntegration(string secretKey, bool isInProduction = false) : base(secretKey, isInProduction)
     {
     }
+
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="nonSecurePaymentRequest"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<NonSecurePaymentResponseModel> NonSecurePaymentAsync(NonSecurePaymentRequestModel nonSecurePaymentRequest)
     {
         return await InvokeRequestAsync<NonSecurePaymentResponseModel>((client, requestBody) => client.PostAsync(GetNonSecurePaymentUrl(), requestBody), nonSecurePaymentRequest);
     }
 
-    public async Task<SecurePaymentInitialResponseModel> SecurePaymentChargeAsync(SecurePaymentInitialRequestModel securePaymentInitialRequest)
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="securePaymentInitialRequest"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
+    public async Task<SecurePaymentInitialResponseModel> SecurePaymentInitialAsync(SecurePaymentInitialRequestModel securePaymentInitialRequest)
     {
         return await InvokeRequestAsync<SecurePaymentInitialResponseModel>((client, requestBody) => client.PostAsync(GetSecurePaymentInitialUrl(), requestBody), securePaymentInitialRequest);
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="securePaymentChargeRequest"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<SecurePaymentChargeResponseModel> SecurePaymentChargeAsync(SecurePaymentChargeRequestModel securePaymentChargeRequest)
     {
         return await InvokeRequestAsync<SecurePaymentChargeResponseModel>((client, requestBody) => client.PostAsync(GetSecurePaymentChargeUrl(), requestBody), securePaymentChargeRequest);
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="refundRequest"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<RefundResponseModel> RefundAsync(RefundRequestModel refundRequest)
     {
         return await InvokeRequestAsync<RefundResponseModel>((client, requestBody) => client.PostAsync(GetRefundUrl(), requestBody), refundRequest);
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="cancellationRequest"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<CancellationResponseModel> CancelAsync(CancellationRequestModel cancellationRequest)
     {
         return await InvokeRequestAsync<CancellationResponseModel>((client, requestBody) => client.PostAsync(GetCancelUrl(), requestBody), cancellationRequest);
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="checkInstallmentRequest"><inheritdoc/></param>
+    /// <returns><inheritdoc/></returns>
     public async Task<CheckInstallmentResponseModel> CheckInstallmentAsync(CheckInstallmentRequestModel checkInstallmentRequest)
     {
         return await InvokeRequestAsync<CheckInstallmentResponseModel>((client, requestBody) => client.PostAsync(GetCheckInstallmentUrl(), requestBody), checkInstallmentRequest);

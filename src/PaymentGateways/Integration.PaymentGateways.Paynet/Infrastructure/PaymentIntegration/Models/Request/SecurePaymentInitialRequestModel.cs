@@ -3,11 +3,25 @@
 namespace Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration.Models.Request;
 public class SecurePaymentInitialRequestModel : IRequestModel
 {
+    public SecurePaymentInitialRequestModel(string amount, string orderRefNo, string domain, string cardHolder, string pan, int month, int year, string cVC, string returnUrl, int? instalment = null)
+    {
+        Amount = amount;
+        OrderRefNo = orderRefNo;
+        Domain = domain;
+        CardHolder = cardHolder;
+        Pan = pan;
+        Month = month;
+        Year = year;
+        CVC = cVC;
+        ReturnUrl = returnUrl;
+        Instalment = instalment;
+    }
+
+    public string AgentReferenceNo { get; set; }
+
     public string Amount { get; set; }
 
     public string OrderRefNo { get; set; }
-
-    public string AgentReferenceNo { get; set; }
 
     public string Domain { get; set; }
 
@@ -21,6 +35,10 @@ public class SecurePaymentInitialRequestModel : IRequestModel
 
     public string CVC { get; set; }
 
+    public string ReturnUrl { get; set; }
+
+    public int? Instalment { get; set; }
+
     public string CardHash { get; set; }
 
     public string CardHolderPhone { get; set; }
@@ -28,8 +46,6 @@ public class SecurePaymentInitialRequestModel : IRequestModel
     public string CardHolderMail { get; set; }
 
     public string Description { get; set; }
-
-    public int? Instalment { get; set; }
 
     public string AgentId { get; set; }
 
@@ -69,8 +85,5 @@ public class SecurePaymentInitialRequestModel : IRequestModel
 
     public string Iban { get; set; }
 
-    public string ReturnUrl { get; set; }
-
     public bool ApprovedCard { get; set; }
-
 }

@@ -1,9 +1,21 @@
-﻿
-using Integration.Hub;
+﻿using Integration.Hub;
 
 namespace Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration.Models.Request;
 public class NonSecurePaymentRequestModel : IRequestModel
 {
+    public NonSecurePaymentRequestModel(string amount, string referenceNo, string domain, string cardHolder, string pan, string month, string year, string cvc, int? instalment = null)
+    {
+        Amount = amount;
+        ReferenceNo = referenceNo;
+        Domain = domain;
+        CardHolder = cardHolder;
+        Pan = pan;
+        Month = month;
+        Year = year;
+        CVC = cvc;
+        Instalment = instalment;
+    }
+
     /// <summary>
     /// Kredi kartından çekilecek tutar. Ondalık ayıraç olarak virgül (,)  kullanılmaktadır.(Zorunlu)
     /// </summary>
@@ -13,11 +25,6 @@ public class NonSecurePaymentRequestModel : IRequestModel
     /// Ödeme işleminin ilişkili olduğu referans numarası. Tekil (unique) bir veri olmalı. ( örn: sipariş numarası) (Zorunlu)
     /// </summary>
     public string ReferenceNo { get; set; }
-
-    /// <summary>
-    /// Ana firma bayi referans kodu (Zorunlu değil)
-    /// </summary>
-    public string AgentReferenceNo { get; set; }
 
     /// <summary>
     /// İşlemin yapıldığı uygulamanın domain bilgisi. ( örn: www.acme.com ) (Zorunlu)
@@ -49,6 +56,11 @@ public class NonSecurePaymentRequestModel : IRequestModel
     //Saklı kart ile işlem yapılmıyorsa zorunlu.
     /// </summary>
     public string CVC { get; set; }
+
+    /// <summary>
+    /// Ana firma bayi referans kodu (Zorunlu değil)
+    /// </summary>
+    public string AgentReferenceNo { get; set; }
 
     public string CardHash { get; set; }
 
