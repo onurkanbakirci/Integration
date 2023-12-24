@@ -1,0 +1,8 @@
+{
+  "label": "Marketplaces",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Easy way to integrate with marketplaces"
+  }
+}
