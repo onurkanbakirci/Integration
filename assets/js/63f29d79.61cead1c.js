@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkintegration=self.webpackChunkintegration||[]).push([[572],{332:e=>{e.exports=JSON.parse('{"permalink":"/Integration/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
