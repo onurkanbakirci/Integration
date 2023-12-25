@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentGateways", "PaymentG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaynetIntegrationSampleConsoleApp", "samples\PaymentGateways\PaynetIntegrationSampleConsoleApp\PaynetIntegrationSampleConsoleApp.csproj", "{E9D8CC15-86F9-4BCD-903A-689112662FE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration.PaymentGateways.Sipay", "src\PaymentGateways\Integration.PaymentGateways.Sipay\Integration.PaymentGateways.Sipay.csproj", "{D881792A-2FF3-42C8-AD85-70A5F279D6DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SipayIntegrationSampleConsoleApp", "samples\PaymentGateways\SipayIntegrationSampleConsoleApp\SipayIntegrationSampleConsoleApp.csproj", "{E6169DA7-4B5C-49AF-90E3-57D55FA554C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +70,14 @@ Global
 		{E9D8CC15-86F9-4BCD-903A-689112662FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9D8CC15-86F9-4BCD-903A-689112662FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9D8CC15-86F9-4BCD-903A-689112662FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D881792A-2FF3-42C8-AD85-70A5F279D6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D881792A-2FF3-42C8-AD85-70A5F279D6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D881792A-2FF3-42C8-AD85-70A5F279D6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D881792A-2FF3-42C8-AD85-70A5F279D6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6169DA7-4B5C-49AF-90E3-57D55FA554C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6169DA7-4B5C-49AF-90E3-57D55FA554C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6169DA7-4B5C-49AF-90E3-57D55FA554C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6169DA7-4B5C-49AF-90E3-57D55FA554C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2E841AED-7444-4875-8D11-D756A01105FD} = {8D1AC917-32E3-4579-9A06-B6190C1B9F31}
@@ -79,5 +91,7 @@ Global
 		{3B5D9A6A-FA30-42C6-8C3D-7A38314B64D3} = {D54A7D33-8E81-413F-B1D5-D9DF65BA1D83}
 		{572AD2AF-7896-4707-8D3A-8EAFF16991C0} = {51C29F15-6693-428D-9705-1986F8C71428}
 		{E9D8CC15-86F9-4BCD-903A-689112662FE8} = {572AD2AF-7896-4707-8D3A-8EAFF16991C0}
+		{D881792A-2FF3-42C8-AD85-70A5F279D6DD} = {D54A7D33-8E81-413F-B1D5-D9DF65BA1D83}
+		{E6169DA7-4B5C-49AF-90E3-57D55FA554C4} = {572AD2AF-7896-4707-8D3A-8EAFF16991C0}
 	EndGlobalSection
 EndGlobal

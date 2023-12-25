@@ -8,6 +8,9 @@
     <Version>1.0.1</Version>
     <Authors>onurkanbakirci</Authors>
     <Company>onurkanbakirci</Company>
+    <Description>Integration.Hub</Description>
+    <RepositoryUrl>https://github.com/onurkanbakirci/Integration</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType> 
   </PropertyGroup>
 
 </Project>

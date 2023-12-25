@@ -1,4 +1,3 @@
-using Integration.Marketplaces.Trendyol.Infrastructure;
 using Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration;
 using Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration.Models.Request;
 using Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration.Models.Response;

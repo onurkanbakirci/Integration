@@ -12,6 +12,8 @@
     <Version>1.0.1</Version>
     <Authors>onurkanbakirci</Authors>
     <Company>onurkanbakirci</Company>
+    <RepositoryUrl>https://github.com/onurkanbakirci/Integration</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType> 
   </PropertyGroup>
 
 </Project>

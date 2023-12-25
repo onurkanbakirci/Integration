@@ -2,7 +2,7 @@ using System.Text;
 using System.Text.Json;
 using Integration.Hub;
 
-namespace Integration.Marketplaces.Trendyol.Infrastructure;
+namespace Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration;
 public class PaynetIntegrationBase : IntegrationBase
 {
     public const string ProdBaseUrl = "https://api.paynet.com.tr/";

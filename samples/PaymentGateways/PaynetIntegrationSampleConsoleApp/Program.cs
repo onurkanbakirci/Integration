@@ -37,9 +37,9 @@ var securePaymentInitialResponse = await paynetPaymentIntegration.SecurePaymentI
 Console.WriteLine(securePaymentInitialResponse.HtmlContent);
 
 // 3. After successfull 3d confirmation, secure payment charge
-var securePaymentChargeRequest = new SecurePaymentChargeRequestModel(
+var securePaymentChargeRequest = await paynetPaymentIntegration.SecurePaymentChargeAsync(new SecurePaymentChargeRequestModel(
     sessionId: securePaymentInitialResponse.SessionId,
-    tokenId: securePaymentInitialResponse.TokenId);
+    tokenId: securePaymentInitialResponse.TokenId));
 
 
 // Cancel payment

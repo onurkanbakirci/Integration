@@ -1,0 +1,10 @@
+<form action='https://provisioning.sipay.com.tr/ccpayment/api/paySmart3D' method='post' id='the-form'>
+    @foreach (var prop in Model.Properties)
+    {
+        <input type='hidden' name='@prop.PropertyName' value='@prop.Model' />
+    }
+</form>
+<script type="text/javascript">window.onload = function () {
+        document.getElementById("the-form").submit();
+    }
+</script>

@@ -4,16 +4,20 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>Integration.PaymentGateways.Paynet</PackageId>
+    <PackageId>Integration.PaymentGateways.Sipay</PackageId>
     <Version>1.0.0</Version>
     <Authors>onurkanbakirci</Authors>
     <Company>onurkanbakirci</Company>
-    <RepositoryUrl>https://github.com/onurkanbakirci/Integration</RepositoryUrl> 
-    <RepositoryType>git</RepositoryType> 
+    <RepositoryUrl>https://github.com/onurkanbakirci/Integration</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Integration.Hub\Integration.Hub.csproj" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <PackageReference Include="RazorEngineCore" Version="2023.11.2" />
+  </ItemGroup>
+
 </Project>
