@@ -12,7 +12,7 @@ public class IntegrationBase
         _httpClient = new HttpClient();
     }
 
-    protected void IntializeDefaultHeaders(Dictionary<string, string> headers)
+    protected void InitializeDefaultHeaders(Dictionary<string, string> headers)
     {
         // Add default headers to the request
         foreach (var header in headers)

@@ -43,14 +43,14 @@ public interface ISipayPaymentIntegration : IPaymentIntegration
     Task<SecurePaymentChargeResponseModel> SecurePaymentChargeAsync(SecurePaymentChargeRequestModel securePaymentChargeRequestModel);
 
     /// <summary>
-    /// Cancel payment request
+    /// Cancel payment
     /// </summary>
     /// <param name="cancellationRequestModel"></param>
     /// <returns><see cref="CancellationResponseModel"/></returns>
     Task<CancellationResponseModel> CancelAsync(CancellationRequestModel cancellationRequestModel);
 
     /// <summary>
-    /// Refund payment request
+    /// Refund payment
     /// </summary>
     /// <param name="refundRequestModel"></param>
     /// <returns><see cref="RefundResponseModel"/></returns>

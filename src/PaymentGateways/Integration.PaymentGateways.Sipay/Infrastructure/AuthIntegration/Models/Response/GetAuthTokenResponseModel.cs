@@ -1,6 +1,4 @@
-using Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Response;
-
-namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration;
+namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Response;
 public class GetAuthTokenResponseModel : SipayBaseResponseModel<GetAuthTokenResponseModel>
 {
     public string StatusCode { get; set; }

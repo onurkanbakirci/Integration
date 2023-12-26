@@ -1,11 +1,13 @@
 using Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration;
+using Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Request;
+using Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Response;
 
 namespace Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration;
-public class SipayPaymentIntegration : SipayIntegrationBase, ISipayAuthIntegration
+public class SipayAuthIntegration : SipayIntegrationBase, ISipayAuthIntegration
 {
     private string GetTokentUrl() => $"{GetBaseUrl()}api/token";
 
-    public SipayPaymentIntegration(string merchantKey, string appKey, string appSecret, int merchantId, bool isInProduction = true) : base(merchantKey, appKey, appSecret, merchantId, isInProduction)
+    public SipayAuthIntegration(string merchantKey, string appKey, string appSecret, int merchantId, bool isInProduction = true) : base(merchantKey, appKey, appSecret, merchantId, isInProduction)
     {
     }
 

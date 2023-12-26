@@ -1,5 +1,5 @@
 using Integration.Hub;
-namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration;
+namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Request;
 public class GetAuthTokenRequestModel : IRequestModel
 {
     public GetAuthTokenRequestModel(string appId, string appSecret)

@@ -20,4 +20,8 @@
     <PackageReference Include="RazorEngineCore" Version="2023.11.2" />
   </ItemGroup>
 
+  <ItemGroup>
+		<Content Remove="Resources\HTML\3ds-payment-form.cshtml" />
+	</ItemGroup>
+
 </Project>

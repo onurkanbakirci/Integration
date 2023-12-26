@@ -60,7 +60,7 @@ var securePaymentInitialResponse = await paynetPaymentIntegration.SecurePaymentI
     pan: "pan",
     month: 1,
     year: 2021,
-    cVC: "cVC",
+    cvc: "cvc",
     returnUrl: "returnUrl",
     instalment: 1));
 ```

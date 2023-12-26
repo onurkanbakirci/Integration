@@ -21,7 +21,7 @@ public class TrendyolIntegrationBase : IntegrationBase
         _isInProduction = isInProduction;
         _entegratorFirm = entegratorFirm;
 
-        IntializeDefaultHeaders(new Dictionary<string, string>
+        InitializeDefaultHeaders(new Dictionary<string, string>
         {
             { "Accept", "application/json" },
             { "User-Agent", $"{_supplierId} - {_entegratorFirm}" },

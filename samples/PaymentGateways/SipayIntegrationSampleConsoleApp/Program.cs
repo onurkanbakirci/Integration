@@ -2,10 +2,10 @@
 using Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Models.Response;
 
 var sipayPaymentIntegration = new SipayPaymentIntegration(
-    merchantKey: "merchantKey",
-    appKey: "appKey",
-    appSecret: "appSecret",
-    merchantId: 0,
+    merchantKey: "$2y$10$HmRgYosneqcwHj.UH7upGuyCZqpQ1ITgSMj9Vvxn.t6f.Vdf2SQFO",
+    appKey: "6d4a7e9374a76c15260fcc75e315b0b9",
+    appSecret: "b46a67571aa1e7ef5641dc3fa6f1712a",
+    merchantId: 18309,
     isInProduction: false
 );
 

@@ -3,7 +3,7 @@
 namespace Integration.PaymentGateways.Paynet.Infrastructure.PaymentIntegration.Models.Request;
 public class SecurePaymentInitialRequestModel : IRequestModel
 {
-    public SecurePaymentInitialRequestModel(string amount, string orderRefNo, string domain, string cardHolder, string pan, int month, int year, string cVC, string returnUrl, int? instalment = null)
+    public SecurePaymentInitialRequestModel(string amount, string orderRefNo, string domain, string cardHolder, string pan, int month, int year, string cvc, string returnUrl, int? instalment = null)
     {
         Amount = amount;
         OrderRefNo = orderRefNo;
@@ -12,7 +12,7 @@ public class SecurePaymentInitialRequestModel : IRequestModel
         Pan = pan;
         Month = month;
         Year = year;
-        CVC = cVC;
+        CVC = cvc;
         ReturnUrl = returnUrl;
         Instalment = instalment;
     }

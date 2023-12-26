@@ -15,7 +15,7 @@ public class PaynetIntegrationBase : IntegrationBase
         _secretKey = secretKey ?? throw new ArgumentNullException(nameof(secretKey));
         _isInProduction = isInProduction;
 
-        IntializeDefaultHeaders(new Dictionary<string, string>
+        InitializeDefaultHeaders(new Dictionary<string, string>
         {
             { "Accept", "application/json" },
             { "Authorization", $"Basic {Convert.ToBase64String(Encoding.ASCII.GetBytes($"{_secretKey}"))}"}

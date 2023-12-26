@@ -1,5 +1,6 @@
 # Integration Project
 
+
 <p>
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
@@ -16,13 +17,13 @@ Enhance your integration workflows by leveraging the Integration Library, which 
 
 ## Build Status
 
-&nbsp; | `status` | `version`
+&nbsp; | `status` | `nuget`
 --- | --- | --- 
-**Integration.Hub** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/integration-hub.yml/badge.svg) |  1.0.1
-**Integration.Marketplaces.Trendyol** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/trendyol-integration.yml/badge.svg) |  1.0.1
-**Integration.Marketplaces.Hepsiburada** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/hepsiburada-integration.yml/badge.svg) |  1.0.1
-**Integration.PaymentGateways.Paynet** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/paynet-integration.yml/badge.svg) |  1.0.0
-**Integration.PaymentGateways.Sipay** | ![build](https://github.com/onurkanbakirci/Integration/actions/workflows/sipay-integration.yml/badge.svg) |  1.0.0
+**Integration.Hub** | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/onurkanbakirci/Integration/integration-hub.yml) | ![Nuget](https://img.shields.io/nuget/dt/Integration.Hub?color=green&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.Hub) ![Nuget](https://img.shields.io/nuget/v/Integration.Hub?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.Hub)
+**Integration.Marketplaces.Trendyol** | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/onurkanbakirci/Integration/trendyol-integration.yml) |  ![Nuget](https://img.shields.io/nuget/dt/Integration.Marketplaces.Trendyol?color=green&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.Marketplaces.Trendyol) ![Nuget](https://img.shields.io/nuget/v/Integration.Marketplaces.Trendyol?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.Marketplaces.Trendyol)
+**Integration.Marketplaces.Hepsiburada** | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/onurkanbakirci/Integration/hepsiburada-integration.yml) | ![Nuget](https://img.shields.io/nuget/dt/Integration.Marketplaces.Hepsiburada?color=green&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.Marketplaces.Hepsiburada) ![Nuget](https://img.shields.io/nuget/v/Integration.Marketplaces.Hepsiburada?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.Marketplaces.Hepsiburada)
+**Integration.PaymentGateways.Paynet** | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/onurkanbakirci/Integration/paynet-integration.yml) |  ![Nuget](https://img.shields.io/nuget/dt/Integration.PaymentGateways.Paynet?color=green&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.PaymentGateways.Paynet) ![Nuget](https://img.shields.io/nuget/v/Integration.PaymentGateways.Paynet?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.PaymentGateways.Paynet)
+**Integration.PaymentGateways.Sipay** | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/onurkanbakirci/Integration/sipay-integration.yml) |  ![Nuget](https://img.shields.io/nuget/dt/Integration.PaymentGateways.Sipay?color=green&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.PaymentGateways.Sipay) ![Nuget](https://img.shields.io/nuget/v/Integration.PaymentGateways.Sipay?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FIntegration.PaymentGateways.Sipay)
 
 ## Table of contents
 
@@ -143,7 +144,7 @@ var securePaymentInitialResponse = await paynetPaymentIntegration.SecurePaymentI
     pan: "pan",
     month: 1,
     year: 2021,
-    cVC: "cVC",
+    cvc: "cvc",
     returnUrl: "returnUrl",
     instalment: 1));
 

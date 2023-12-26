@@ -2,7 +2,7 @@ using Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Helper
 using Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Models.Request;
 using Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Models.Response;
 using Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration;
-using System.ComponentModel;
+using Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Request;
 
 public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegration
 {
@@ -15,6 +15,8 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
 
     public SipayPaymentIntegration(string merchantKey, string appKey, string appSecret, int merchantId, bool isInProduction = true) : base(merchantKey, appKey, appSecret, merchantId, isInProduction)
     {
+        var sipayAuthIntegration = new SipayAuthIntegration(merchantKey, appKey, appSecret, merchantId, isInProduction);
+        var token = sipayAuthIntegration.GetAuthTokenAsync(new GetAuthTokenRequestModel(appKey, appSecret));
     }
 
     /// <summary>

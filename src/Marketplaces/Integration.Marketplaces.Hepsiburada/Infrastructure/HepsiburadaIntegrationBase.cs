@@ -17,7 +17,7 @@ public class HepsiburadaIntegrationBase : IntegrationBase
         _password = password ?? throw new ArgumentNullException(nameof(password));
         _isInProduction = isInProduction;
 
-        IntializeDefaultHeaders(new Dictionary<string, string>
+        InitializeDefaultHeaders(new Dictionary<string, string>
         {
             { "Accept", "application/json" },
             { "Authorization", $"Basic {Convert.ToBase64String(Encoding.ASCII.GetBytes($"{_username}:{_password}"))}"}

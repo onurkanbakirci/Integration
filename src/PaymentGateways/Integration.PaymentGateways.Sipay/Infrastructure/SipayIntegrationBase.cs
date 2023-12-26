@@ -20,7 +20,7 @@ public class SipayIntegrationBase : IntegrationBase
         _merchantId = merchantId;
         _isInProduction = isInProduction;
 
-        IntializeDefaultHeaders(new Dictionary<string, string>
+        InitializeDefaultHeaders(new Dictionary<string, string>
         {
             { "Accept", "application/json" },
         });
