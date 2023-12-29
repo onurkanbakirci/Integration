@@ -11,8 +11,8 @@ public class SipayAuthIntegration : SipayIntegrationBase, ISipayAuthIntegration
     {
     }
 
-    public async Task<GetAuthTokenResponseModel> GetAuthTokenAsync(GetAuthTokenRequestModel requestModel)
+    public async Task<SipayBaseResponseModel<GetAuthTokenResponseModel>> GetAuthTokenAsync(GetAuthTokenRequestModel requestModel)
     {
-        return await InvokeRequestAsync<GetAuthTokenResponseModel>((client, requestBody) => client.PostAsync(GetTokentUrl(), requestBody), requestModel);
+        return await InvokeRequestAsync<GetAuthTokenRequestModel, SipayBaseResponseModel<GetAuthTokenResponseModel>>((client, requestBody) => client.PostAsync(GetTokentUrl(), requestBody), requestModel);
     }
 }

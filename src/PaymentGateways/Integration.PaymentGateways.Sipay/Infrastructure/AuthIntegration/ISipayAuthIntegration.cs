@@ -5,5 +5,5 @@ using Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Re
 namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration;
 public interface ISipayAuthIntegration : IAuthIntegration
 {
-    Task<GetAuthTokenResponseModel> GetAuthTokenAsync(GetAuthTokenRequestModel requestModel);
+    public Task<SipayBaseResponseModel<GetAuthTokenResponseModel>> GetAuthTokenAsync(GetAuthTokenRequestModel requestModel);
 }

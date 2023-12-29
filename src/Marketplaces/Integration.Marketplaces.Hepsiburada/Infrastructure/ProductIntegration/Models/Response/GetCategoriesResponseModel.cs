@@ -2,12 +2,7 @@ using Integration.Hub;
 
 namespace Integration.Marketplaces.Hepsiburada.Infrastructure.ProductIntegration.Models.Response;
 
-public class GetCategoriesResponseModel : HepsiburadaBaseResponseModel
-{
-    public List<GetCategoryResponseModel> Data { get; set; }
-}
-
-public class GetCategoryResponseModel : IResponseModel
+public class GetCategoriesResponseModel : IResponseModel
 {
     public int CategoryId { get; set; }
     public string Name { get; set; }

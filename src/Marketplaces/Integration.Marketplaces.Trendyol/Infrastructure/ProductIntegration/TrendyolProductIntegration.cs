@@ -28,9 +28,7 @@ public class TrendyolProductIntegration : TrendyolIntegrationBase, ITrendyolProd
     /// <returns><inheritdoc/></returns>
     public async Task<bool> CreateProductsV2Async(BulkModel<CreateProductRequestModel> products)
     {
-        var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetCreateProducsUrl(), requestBody), products);
-
-        return true;
+        return await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetCreateProducsUrl(), requestBody), products);
     }
 
     /// <summary>
@@ -40,9 +38,7 @@ public class TrendyolProductIntegration : TrendyolIntegrationBase, ITrendyolProd
     /// <returns><inheritdoc/></returns>
     public async Task<bool> DeleteProductsAsync(BulkModel<DeleteProductRequestModel> products)
     {
-        var response = await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetDeleteProductUrl(), requestBody), products);
-
-        return true;
+        return await InvokeRequestAsync((client, requestBody) => client.PostAsync(GetDeleteProductUrl(), requestBody), products);
     }
 
     /// <summary>
@@ -118,9 +114,7 @@ public class TrendyolProductIntegration : TrendyolIntegrationBase, ITrendyolProd
     /// <returns><inheritdoc/></returns>
     public async Task<bool> UpdatePriceAndInventoryAsync(BulkModel<UpdateStockAndPriceRequestModel> products)
     {
-        var response = await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetUpdatePriceAndStockUrl(), requestBody), products);
-
-        return true;
+        return await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetUpdatePriceAndStockUrl(), requestBody), products);
     }
 
     /// <summary>
@@ -130,8 +124,6 @@ public class TrendyolProductIntegration : TrendyolIntegrationBase, ITrendyolProd
     /// <returns><inheritdoc/></returns>
     public async Task<bool> UpdateProductAsync(BulkModel<UpdateProductRequestModel> products)
     {
-        var response = await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetUpdateProductUrl(), requestBody), products);
-
-        return true;
+        return await InvokeRequestAsync((client, requestBody) => client.PutAsync(GetUpdateProductUrl(), requestBody), products);
     }
 }

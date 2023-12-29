@@ -9,11 +9,13 @@ var sipayPaymentIntegration = new SipayPaymentIntegration(
     isInProduction: false
 );
 
+await sipayPaymentIntegration.SetTokenAsync();
+
 // Get installments
 var installments = await sipayPaymentIntegration.CheckInstallmentsAsync(new CheckInstallmentRequestModel(
-    creaditCard: "123456",
+    creditCard: "450803",
     amount: 100,
-    currenyCode: "TRY"
+    currencyCode: "TRY"
 ));
 
 // Non secure payment

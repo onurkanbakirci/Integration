@@ -3,7 +3,7 @@ using Integration.Hub;
 namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Response;
 public class SipayBaseResponseModel<TResponse> : IResponseModel
 {
-    public bool StatusCode { get; set; }
-    public int StatusDescription { get; set; }
+    public int StatusCode { get; set; }
+    public string StatusDescription { get; set; }
     public TResponse Data { get; set; }
 }

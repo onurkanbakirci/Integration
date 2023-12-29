@@ -1,7 +1,9 @@
+using Integration.Hub;
+
 namespace Integration.PaymentGateways.Sipay.Infrastructure.AuthIntegration.Models.Response;
-public class GetAuthTokenResponseModel : SipayBaseResponseModel<GetAuthTokenResponseModel>
+public class GetAuthTokenResponseModel : IResponseModel
 {
-    public string StatusCode { get; set; }
-    public bool Is3D { get; set; }
+    public string Token { get; set; }
+    public int Is3D { get; set; }
     public string ExpiresAt { get; set; }
 }

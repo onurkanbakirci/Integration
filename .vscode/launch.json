@@ -9,7 +9,24 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/samples/PaymentGateways/SipayIntegrationSampleConsoleApp/SipayIntegrationSampleConsoleApp.csproj"
+        },
+        {
+            "name": "C#: Paynet Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/samples/PaymentGateways/PaynetIntegrationSampleConsoleApp/PaynetIntegrationSampleConsoleApp.csproj"
+        },
+        {
+            "name": "C#: Hepsiburada Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/samples/Marketplaces/HepsiburadaIntegrationSampleConsoleApp/HepsiburadaIntegrationSampleConsoleApp.csproj"
+        },
+        {
+            "name": "C#: Trendyol Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/samples/Marketplaces/TrendyolIntegrationSampleConsoleApp/TrendyolIntegrationSampleConsoleApp.csproj"
         }
-
     ]
 }
