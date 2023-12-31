@@ -22,7 +22,7 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     /// <returns><inheritdoc/></returns>
     public async Task<NonSecurePaymentResponseModel> NonSecurePaymentAsync(NonSecurePaymentRequestModel nonSecurePaymentRequest)
     {
-        return await InvokeRequestAsync<NonSecurePaymentResponseModel>((client, requestBody) => client.PostAsync(GetNonSecurePaymentUrl(), requestBody), nonSecurePaymentRequest);
+        return await InvokeRequestAsync<NonSecurePaymentRequestModel, NonSecurePaymentResponseModel>((client, requestBody) => client.PostAsync(GetNonSecurePaymentUrl(), requestBody), nonSecurePaymentRequest);
     }
 
     /// <summary>
@@ -32,7 +32,7 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     /// <returns><inheritdoc/></returns>
     public async Task<SecurePaymentInitialResponseModel> SecurePaymentInitialAsync(SecurePaymentInitialRequestModel securePaymentInitialRequest)
     {
-        return await InvokeRequestAsync<SecurePaymentInitialResponseModel>((client, requestBody) => client.PostAsync(GetSecurePaymentInitialUrl(), requestBody), securePaymentInitialRequest);
+        return await InvokeRequestAsync<SecurePaymentInitialRequestModel, SecurePaymentInitialResponseModel>((client, requestBody) => client.PostAsync(GetSecurePaymentInitialUrl(), requestBody), securePaymentInitialRequest);
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     /// <returns><inheritdoc/></returns>
     public async Task<SecurePaymentChargeResponseModel> SecurePaymentChargeAsync(SecurePaymentChargeRequestModel securePaymentChargeRequest)
     {
-        return await InvokeRequestAsync<SecurePaymentChargeResponseModel>((client, requestBody) => client.PostAsync(GetSecurePaymentChargeUrl(), requestBody), securePaymentChargeRequest);
+        return await InvokeRequestAsync<SecurePaymentChargeRequestModel, SecurePaymentChargeResponseModel>((client, requestBody) => client.PostAsync(GetSecurePaymentChargeUrl(), requestBody), securePaymentChargeRequest);
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     /// <returns><inheritdoc/></returns>
     public async Task<RefundResponseModel> RefundAsync(RefundRequestModel refundRequest)
     {
-        return await InvokeRequestAsync<RefundResponseModel>((client, requestBody) => client.PostAsync(GetRefundUrl(), requestBody), refundRequest);
+        return await InvokeRequestAsync<RefundRequestModel, RefundResponseModel>((client, requestBody) => client.PostAsync(GetRefundUrl(), requestBody), refundRequest);
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     /// <returns><inheritdoc/></returns>
     public async Task<CancellationResponseModel> CancelAsync(CancellationRequestModel cancellationRequest)
     {
-        return await InvokeRequestAsync<CancellationResponseModel>((client, requestBody) => client.PostAsync(GetCancelUrl(), requestBody), cancellationRequest);
+        return await InvokeRequestAsync<CancellationRequestModel, CancellationResponseModel>((client, requestBody) => client.PostAsync(GetCancelUrl(), requestBody), cancellationRequest);
     }
 
     /// <summary>
@@ -72,6 +72,6 @@ public class PaynetPaymentIntegration : PaynetIntegrationBase, IPaynetPaymentInt
     /// <returns><inheritdoc/></returns>
     public async Task<CheckInstallmentResponseModel> CheckInstallmentAsync(CheckInstallmentRequestModel checkInstallmentRequest)
     {
-        return await InvokeRequestAsync<CheckInstallmentResponseModel>((client, requestBody) => client.PostAsync(GetCheckInstallmentUrl(), requestBody), checkInstallmentRequest);
+        return await InvokeRequestAsync<CheckInstallmentRequestModel, CheckInstallmentResponseModel>((client, requestBody) => client.PostAsync(GetCheckInstallmentUrl(), requestBody), checkInstallmentRequest);
     }
 }
