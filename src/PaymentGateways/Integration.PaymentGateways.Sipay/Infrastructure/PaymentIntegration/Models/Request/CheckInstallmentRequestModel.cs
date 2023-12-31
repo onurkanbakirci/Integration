@@ -20,4 +20,9 @@ public class CheckInstallmentRequestModel : IRequestModel
     public string? CommissionBy { get; set; }
     public bool? IsRecurring { get; set; }
     public bool? Is2d { get; set; }
+    public CheckInstallmentRequestModel SetMerchantKey(string merchantKey)
+    {
+        MerchantKey = merchantKey;
+        return this;
+    }
 }

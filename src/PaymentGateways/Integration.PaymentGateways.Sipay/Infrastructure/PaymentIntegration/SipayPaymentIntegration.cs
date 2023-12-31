@@ -34,7 +34,7 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
     /// <returns><inheritdoc/></returns>
     public async Task<SipayBaseResponseModel<List<CheckInstallmentResponseModel>>> CheckInstallmentsAsync(CheckInstallmentRequestModel checkInstallmentRequestModel)
     {
-        checkInstallmentRequestModel.MerchantKey = _merchantKey;
+        checkInstallmentRequestModel.SetMerchantKey(_merchantKey);
         return await InvokeRequestAsync<CheckInstallmentRequestModel, SipayBaseResponseModel<List<CheckInstallmentResponseModel>>>((client, requestBody) => client.PostAsync(GetCheckInstallmentsUrl(), requestBody), checkInstallmentRequestModel);
     }
 
@@ -45,7 +45,8 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
     /// <returns><inheritdoc/></returns>
     public async Task<SipayBaseResponseModel<NonSecurePaymentResponseModel>> NonSecurePaymentAsync(NonSecurePaymentRequestModel nonSecurePaymentRequestModel)
     {
-        nonSecurePaymentRequestModel.MerchantKey = _merchantKey;
+        nonSecurePaymentRequestModel.SetMerchantKey(_merchantKey);
+        nonSecurePaymentRequestModel.SetHashKey(_appSecret);
         return await InvokeRequestAsync<NonSecurePaymentRequestModel, SipayBaseResponseModel<NonSecurePaymentResponseModel>>((client, requestBody) => client.PostAsync(GetNonSecurePaymentUrl(), requestBody), nonSecurePaymentRequestModel);
     }
 
@@ -56,15 +57,8 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
     /// <returns><inheritdoc/></returns>
     public string SecurePaymentInitial(SecurePaymentInitialRequestModel securePaymentInitialRequestModel)
     {
-        securePaymentInitialRequestModel.MerchantKey = _merchantKey;
-
-        //Generate hashkey
-        var hashKey = HashHelper.GenerateHashKey(securePaymentInitialRequestModel.Total.ToString(), securePaymentInitialRequestModel.InstallmentsNumber.ToString(), securePaymentInitialRequestModel.CurrencyCode, securePaymentInitialRequestModel.MerchantKey, securePaymentInitialRequestModel.InvoiceId, _appSecret);
-
-        //Add hash key to dto
-        securePaymentInitialRequestModel.HashKey = hashKey;
-
-        //Generate template
+        securePaymentInitialRequestModel.SetMerchantKey(_merchantKey);
+        securePaymentInitialRequestModel.SetHashKey(_appSecret);
         var template = HTMLHelper.GenerateTemplate("3ds-payment-form", "Resources/HTML", securePaymentInitialRequestModel);
         return template;
     }
@@ -76,8 +70,7 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
     /// <returns><inheritdoc/></returns>
     public async Task<SipayBaseResponseModel<SecurePaymentChargeResponseModel>> SecurePaymentChargeAsync(SecurePaymentChargeRequestModel securePaymentChargeRequestModel)
     {
-        securePaymentChargeRequestModel.MerchantKey = _merchantKey;
-
+        securePaymentChargeRequestModel.SetMerchantKey(_merchantKey);
         return await InvokeRequestAsync<SecurePaymentChargeRequestModel, SipayBaseResponseModel<SecurePaymentChargeResponseModel>>((client, requestBody) => client.PostAsync(GetSecurePaymentChargeUrl(), requestBody), securePaymentChargeRequestModel);
     }
 
@@ -88,10 +81,9 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
     /// <returns><inheritdoc/></returns>
     public async Task<SipayBaseResponseModel<CancellationResponseModel>> CancelAsync(CancellationRequestModel cancellationRequestModel)
     {
-        cancellationRequestModel.MerchantKey = _merchantKey;
-        cancellationRequestModel.AppSecret = _appSecret;
-        cancellationRequestModel.AppId = _appKey;
-
+        cancellationRequestModel.SetMerchantKey(_merchantKey);
+        cancellationRequestModel.SetAppSecret(_appSecret);
+        cancellationRequestModel.SetAppId(_appKey);
         return await InvokeRequestAsync<CancellationRequestModel, SipayBaseResponseModel<CancellationResponseModel>>((client, requestBody) => client.PostAsync(GetCancelUrl(), requestBody), cancellationRequestModel);
     }
 
@@ -102,10 +94,9 @@ public class SipayPaymentIntegration : SipayIntegrationBase, ISipayPaymentIntegr
     /// <returns><inheritdoc/></returns>
     public async Task<SipayBaseResponseModel<RefundResponseModel>> RefundAsync(RefundRequestModel refundRequestModel)
     {
-        refundRequestModel.MerchantKey = _merchantKey;
-        refundRequestModel.AppSecret = _appSecret;
-        refundRequestModel.AppId = _appKey;
-
+        refundRequestModel.SetMerchantKey(_merchantKey);
+        refundRequestModel.SetAppSecret(_appSecret);
+        refundRequestModel.SetAppId(_appKey);
         return await InvokeRequestAsync<RefundRequestModel, SipayBaseResponseModel<RefundResponseModel>>((client, requestBody) => client.PostAsync(GetRefundUrl(), requestBody), refundRequestModel);
     }
 }

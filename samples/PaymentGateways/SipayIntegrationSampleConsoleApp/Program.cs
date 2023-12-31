@@ -19,12 +19,12 @@ var installments = await sipayPaymentIntegration.CheckInstallmentsAsync(new Chec
 ));
 
 // Non secure payment
-var nonSecurePaymentResponse = await sipayPaymentIntegration.NonSecurePaymentAsync(new NonSecurePaymentRequestModel(
+var nonSecurePaymentModel = new NonSecurePaymentRequestModel(
     ccHolderName: "John Doe",
-    ccNo: "123456",
+    ccNo: "4508034508034509",
     expiryMonth: 12,
-    expiryYear: 2022,
-    cvv: 123,
+    expiryYear: 2026,
+    cvv: 000,
     currencyCode: "TRY",
     installmentsNumber: 1,
     invoiceId: 1,
@@ -32,13 +32,13 @@ var nonSecurePaymentResponse = await sipayPaymentIntegration.NonSecurePaymentAsy
     name: "John",
     surname: "Doe",
     total: 100,
-    items: "items",
     cancelUrl: "https://cancelUrl.com",
     returnUrl: "https://returnUrl.com",
-    hashKey: "hashKey",
     ip: "",
     orderType: 0
-));
+);
+nonSecurePaymentModel.AddItem(new NonSecurePaymentItemRequestModel("name", "100", 1, "desc"));
+var nonSecurePaymentResponse = await sipayPaymentIntegration.NonSecurePaymentAsync(nonSecurePaymentModel);
 
 // Secure payment
 // 1. Get secure payment hmtl content and show to user
@@ -58,7 +58,6 @@ var securePaymentInitialHtml = sipayPaymentIntegration.SecurePaymentInitial(new 
     items: "items",
     cancelUrl: "https://cancelUrl.com",
     returnUrl: "https://returnUrl.com",
-    hashKey: "hashKey",
     orderType: 0,
     recurringPaymentNumber: 0,
     recurringPaymentCycle: "",
@@ -75,14 +74,12 @@ Console.WriteLine(securePaymentInitialHtml);
 var securePaymentChargeRequest = await sipayPaymentIntegration.SecurePaymentChargeAsync(new SecurePaymentChargeRequestModel(
     invoiceId: "1",
     orderId: "1",
-    status: "1",
-    hashKey: ""));
+    status: "1"));
 
 
 // Cancel payment
 var cancelResponse = await sipayPaymentIntegration.CancelAsync(new CancellationRequestModel(
     invoiceId: "",
-    hashKey: "",
     refundTransactionId: "",
     refundWebhookKey: ""
 ));
@@ -91,7 +88,6 @@ var cancelResponse = await sipayPaymentIntegration.CancelAsync(new CancellationR
 var refundResponse = await sipayPaymentIntegration.RefundAsync(new RefundRequestModel(
     invoiceId: "",
     amount: 100,
-    hashKey: "",
     refundTransactionId: "",
     refundWebhookKey: ""
 ));

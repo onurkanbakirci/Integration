@@ -1,8 +1,10 @@
+using System.Reflection.Metadata;
 using Integration.Hub;
+using Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Helpers;
 namespace Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Models.Request;
 public class SecurePaymentInitialRequestModel : IRequestModel
 {
-    public SecurePaymentInitialRequestModel(string ccHolderName, string ccNo, int expiryMonth, int expiryYear, int cvv, string currencyCode, int installmentsNumber, string invoiceId, string invoiceDescription, string name, string surname, double total, string items, string cancelUrl, string returnUrl, string hashKey, int orderType, int recurringPaymentNumber, string recurringPaymentCycle, string recurringPaymentInterval, string recurringWebHookKey, int maturityPeriod, int paymentFrequency)
+    public SecurePaymentInitialRequestModel(string ccHolderName, string ccNo, int expiryMonth, int expiryYear, int cvv, string currencyCode, int installmentsNumber, string invoiceId, string invoiceDescription, string name, string surname, double total, string items, string cancelUrl, string returnUrl, int orderType, int recurringPaymentNumber, string recurringPaymentCycle, string recurringPaymentInterval, string recurringWebHookKey, int maturityPeriod, int paymentFrequency)
     {
         CCHolderName = ccHolderName;
         CCNo = ccNo;
@@ -19,7 +21,6 @@ public class SecurePaymentInitialRequestModel : IRequestModel
         Items = items;
         CancelUrl = cancelUrl;
         ReturnUrl = returnUrl;
-        HashKey = hashKey;
         OrderType = orderType;
         RecurringPaymentNumber = recurringPaymentNumber;
         RecurringPaymentCycle = recurringPaymentCycle;
@@ -70,4 +71,16 @@ public class SecurePaymentInitialRequestModel : IRequestModel
     public string? SaleWebHookKey { get; set; }
     public string? PaymentCompletedBy { get; set; }
     public string? ResponseMethod { get; set; }
+
+    public SecurePaymentInitialRequestModel SetHashKey(string appSecret)
+    {
+        HashKey = HashHelper.GenerateHashKey(Total.ToString(), InstallmentsNumber.ToString(), CurrencyCode, MerchantKey, InvoiceId, appSecret);
+        return this;
+    }
+
+    public SecurePaymentInitialRequestModel SetMerchantKey(string merchantKey)
+    {
+        MerchantKey = merchantKey;
+        return this;
+    }
 }

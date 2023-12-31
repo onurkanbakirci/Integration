@@ -15,5 +15,5 @@ public class CheckInstallmentResponseModel : IResponseModel
     public string AmountToBePaid { get; set; }
     public string CurrencyCode { get; set; }
     public int CurrencyId { get; set; }
-    public string Title { get; set; }
+    //public string Title { get; set; }//Sipay has problem. This prop can be both string and int
 }

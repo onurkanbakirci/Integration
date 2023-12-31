@@ -2,11 +2,10 @@ using Integration.Hub;
 namespace Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Models.Response;
 public class RefundRequestModel : IRequestModel
 {
-    public RefundRequestModel(string invoiceId, double amount, string hashKey, string refundTransactionId, string? refundWebhookKey = null)
+    public RefundRequestModel(string invoiceId, double amount, string refundTransactionId, string? refundWebhookKey = null)
     {
         InvoiceId = invoiceId;
         Amount = amount;
-        HashKey = hashKey;
         RefundTransactionId = refundTransactionId;
         RefundWebhookKey = refundWebhookKey;
     }
@@ -19,4 +18,21 @@ public class RefundRequestModel : IRequestModel
     public string HashKey { get; set; }
     public string RefundTransactionId { get; set; }
     public string? RefundWebhookKey { get; set; }
+
+
+    public RefundRequestModel SetMerchantKey(string merchantKey)
+    {
+        MerchantKey = merchantKey;
+        return this;
+    }
+    public RefundRequestModel SetAppSecret(string appSecret)
+    {
+        AppSecret = appSecret;
+        return this;
+    }
+    public RefundRequestModel SetAppId(string appId)
+    {
+        AppId = appId;
+        return this;
+    }
 }

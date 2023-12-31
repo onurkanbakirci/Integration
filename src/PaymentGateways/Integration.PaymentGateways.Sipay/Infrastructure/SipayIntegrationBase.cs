@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Integration.Hub;
 
 namespace Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration;
@@ -28,6 +29,7 @@ public class SipayIntegrationBase : IntegrationBase
         SetSerializerOptions(new JsonSerializerOptions
         {
             PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
         });
     }
 

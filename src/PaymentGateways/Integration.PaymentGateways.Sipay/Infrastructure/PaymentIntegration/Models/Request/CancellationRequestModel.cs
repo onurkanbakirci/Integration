@@ -2,10 +2,9 @@ using Integration.Hub;
 namespace Integration.PaymentGateways.Sipay.Infrastructure.PaymentIntegration.Models.Response;
 public class CancellationRequestModel : IRequestModel
 {
-    public CancellationRequestModel(string invoiceId, string hashKey, string refundTransactionId, string? refundWebhookKey = null)
+    public CancellationRequestModel(string invoiceId, string refundTransactionId, string? refundWebhookKey = null)
     {
         InvoiceId = invoiceId;
-        HashKey = hashKey;
         RefundTransactionId = refundTransactionId;
         RefundWebhookKey = refundWebhookKey;
     }
@@ -17,4 +16,20 @@ public class CancellationRequestModel : IRequestModel
     public string HashKey { get; set; }
     public string RefundTransactionId { get; set; }
     public string? RefundWebhookKey { get; set; }
+
+    public CancellationRequestModel SetMerchantKey(string merchantKey)
+    {
+        MerchantKey = merchantKey;
+        return this;
+    }
+    public CancellationRequestModel SetAppSecret(string appSecret)
+    {
+        AppSecret = appSecret;
+        return this;
+    }
+    public CancellationRequestModel SetAppId(string appId)
+    {
+        AppId = appId;
+        return this;
+    }
 }

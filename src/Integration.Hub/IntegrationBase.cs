@@ -65,7 +65,6 @@ public class IntegrationBase
             throw new Exception(responseAsString);
         return JsonSerializer.Deserialize<TResponse>(responseAsString, _options)!;
     }
-
     public async Task<bool> InvokeRequestAsync<TRequest>(Func<HttpClient, StringContent?, Task<HttpResponseMessage>> httpRequest, TRequest requestModel)
     where TRequest : IRequestModel
     {
