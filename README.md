@@ -188,6 +188,9 @@ var sipayPaymentIntegration = new SipayPaymentIntegration(
     isInProduction: false
 );
 
+// Authorization is mandatory to further requests
+await sipayPaymentIntegration.SetTokenAsync();
+
 // Get installments
 var installments = await sipayPaymentIntegration.CheckInstallmentsAsync(new CheckInstallmentRequestModel(
     creaditCard: "123456",

@@ -30,6 +30,12 @@ You have to get your **merchantKey**, **appKey**, **appSecret**, **merchantId** 
 
 :::
 
+### Authentication/Authorization
+Authentication/Authorization is mandatory to further requests
+```csharp
+await sipayPaymentIntegration.SetTokenAsync();
+```
+
 ### Get installments
 
 ```csharp
