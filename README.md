@@ -5,10 +5,11 @@
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
-  <img src="https://yt3.googleusercontent.com/tOTacHyEgTXLN6JWT8ftiZ-xtHnX0R_XFRRS-AB_A9FXVrTC5-QhAWNF0pfWi2yi_APG3Q4N1Q=s900-c-k-c0x00ffffff-no-rj" width="48">
-  <img src="https://media.licdn.com/dms/image/C4D0BAQE1iTu5X4_WDw/company-logo_200_200/0/1679918244582?e=1710979200&v=beta&t=CccfF3oAMI5QYf_LWKzcvfAocW7x_1aIzXGpgFbueZo" width="48">
-  <img src="https://pbs.twimg.com/profile_images/1723743306796953601/ETtAZnlV_400x400.jpg" width="48">
-  <img src="https://www.paynet.com.tr/themes/custom/paynet/images/og.jpg" width="90">
+  <br/>
+  <img src="./images/hepsiburada.png" width="48">
+  <img src="./images/trendyol.webp" width="90">
+  <img src="./images/sipay.jpeg" width="48">
+  <img src="./images/paynet.jpg" width="90">
 </p>
 
 **Synchronize Your Code Universe**
